@@ -4,10 +4,14 @@ Hello and welcome to the source code for my personal portfolio website. This rep
 
 Quick rundown of the technologies being used:
 
-- ReactJS
-- Next.JS
-- Tailwind CSS
-- react-social-icons
+- [ReactJS](https://reactjs.org/)
+- [Next.JS](https://nextjs.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+
+other technologies
+
+- [next-themes](https://github.com/pacocoursey/next-themes)
+- [react-social-icons](https://github.com/jaketrent/react-social-icons)
 
 ## More Information
 
