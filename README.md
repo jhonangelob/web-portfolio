@@ -6,6 +6,8 @@ Quick rundown of the technologies being used:
 
 - ReactJS
 - Next.JS
+- Tailwind CSS
+- react-social-icons
 
 ## More Information
 
