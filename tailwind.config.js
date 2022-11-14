@@ -1,3 +1,5 @@
+const { defaultConfig } = require('next/dist/server/config-shared');
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ['./pages/**/*.{js,jsx}', './components/**/*.{js,jsx}'],
@@ -11,7 +13,11 @@ module.exports = {
       'black-color': '#060606',
       'gray-color': '#c4c4c4',
     },
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ['Poppins', 'sans-serif'],
+      },
+    },
   },
   plugins: [],
 };
