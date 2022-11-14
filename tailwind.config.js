@@ -3,13 +3,13 @@ module.exports = {
   content: ['./pages/**/*.{js,jsx}', './components/**/*.{js,jsx}'],
   theme: {
     colors: {
+      'white-color': '#fff',
+      'bg-color': '#191919',
       'primary-color': '#303030',
-      'secondary-color': '#ffa000',
+      'secondary-color': '#696969',
+      'accent-color': '#ff0049',
       'black-color': '#060606',
-      'lightgray-color': '#e4e4e4',
-      'gray-color': '#657688',
-      'brown-color': '#46364a',
-      'blue-color': '#3e3b4c',
+      'gray-color': '#c4c4c4',
     },
     extend: {},
   },
