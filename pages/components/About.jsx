@@ -11,7 +11,7 @@ const About = () => {
             color: '#ff0049',
           }}
           transition={{
-            duration: 0.5,
+            duration: 0.75,
           }}
         >
           Front-End
@@ -23,7 +23,6 @@ const About = () => {
           }}
           transition={{
             duration: 0.5,
-            delay: 0.5,
           }}
         >
           UI/UX
