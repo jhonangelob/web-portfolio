@@ -13,7 +13,7 @@ const Header = () => {
   return (
     <header
       className='
-      sticky top-0 flex items-center p-5 justify-between max-w-7xl mx-auto z-20 cursor-pointer dark:bg-bg-color'
+      sticky top-0 flex items-center bg-white-color p-5 justify-between max-w-7xl mx-auto z-20 cursor-pointer dark:bg-bg-color'
     >
       <motion.div
         className='flex flex-row items-center'
@@ -24,7 +24,7 @@ const Header = () => {
         {links.map((link, index) => (
           <SocialIcon
             key={`${link}-${index}`}
-            className='dark:fill-white-color'
+            className='dark:fill-white-color '
             url={link}
             fgColor='primary-color'
             bgColor='transparent'
@@ -32,21 +32,13 @@ const Header = () => {
           />
         ))}
       </motion.div>
+
       <motion.div
         className='flex flex-row items-center cursor-pointer'
         initial={{ x: 500, opacity: 0, scale: 0.5 }}
         animate={{ x: 0, opacity: 1, scale: 1 }}
         transition={{ duration: 1.5 }}
       >
-        {/* <SocialIcon
-          url='reddit.com'
-          fgColor='primary-color'
-          bgColor='transparent'
-          style={{
-            width: 40,
-            heigth: 40,
-          }}
-        /> */}
         <SocialIcon
           network='email'
           className='dark:fill-white-color '
