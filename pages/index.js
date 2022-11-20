@@ -7,6 +7,8 @@ import About from './components/About';
 import Projects from './components/Projects';
 import React from 'react';
 import Experience from './components/Experience';
+import Contact from './components/Contact';
+import Footer from './components/Footer';
 
 export default function Home() {
   const { systemTheme, theme, setTheme } = useTheme();
@@ -36,8 +38,9 @@ export default function Home() {
         <About />
         <Projects />
         <Experience />
-        {/* Contact Me */}
+        <Contact />
       </section>
+      <Footer />
     </React.Fragment>
   );
 }
