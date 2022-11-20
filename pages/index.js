@@ -6,6 +6,7 @@ import Hero from './components/Hero';
 import About from './components/About';
 import Projects from './components/Projects';
 import React from 'react';
+import Experience from './components/Experience';
 
 export default function Home() {
   const { systemTheme, theme, setTheme } = useTheme();
@@ -34,7 +35,7 @@ export default function Home() {
         <Hero />
         <About />
         <Projects />
-        {/* Experience*/}
+        <Experience />
         {/* Contact Me */}
       </section>
     </React.Fragment>
