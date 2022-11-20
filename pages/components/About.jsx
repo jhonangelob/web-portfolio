@@ -3,8 +3,8 @@ import { motion } from 'framer-motion';
 
 const About = () => {
   return (
-    <div className='flex justify-center items-center p-5 h-screen'>
-      <h1 className='text-primary-color text-5xl leading-normal max-w-6xl m-auto font-bold md:text-8xl dark:text-secondary-color'>
+    <div className='flex flex-col justify-center p-5 max-w-6xl m-auto h-screen'>
+      <h1 className='text-primary-color text-5xl leading-normal font-bold md:text-8xl dark:text-secondary-color'>
         I specializes in{' '}
         <motion.span
           whileInView={{
