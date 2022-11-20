@@ -16,7 +16,7 @@ import {
   tailwindcss,
 } from '../assets/_index';
 
-const frontend = [html, css, javascript, reactjs, sass, nextjs];
+const frontend = [html, css, javascript, reactjs, sass, nextjs, tailwindcss];
 const backend = [nodejs, firebase];
 const others = [git, npm, figma, contentful];
 
