@@ -22,7 +22,7 @@ const others = [git, npm, figma, contentful];
 
 function Experience() {
   return (
-    <div className='flex flex-col justify-center max-w-6xl gap-10 m-auto p-5 h-screen'>
+    <div className='flex flex-col justify-center max-w-6xl gap-10 m-auto p-5 min-h-screen'>
       <h1 className='text-5xl font-bold text-secondary-color md:max-w-2xl md:text-7xl'>
         My Web Development <span className='text-gray-color'>Technologies</span>{' '}
         and <span className='text-gray-color'>Experience</span>.
