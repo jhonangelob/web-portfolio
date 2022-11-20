@@ -43,7 +43,7 @@ const Contact = () => {
             </button>
           </form>
         </div>
-        <div className='w-100 pl-4 gap-5 flex flex-col text-secondary-color items-center md:w-2/6 md:items-start'>
+        <div className='w-100 pl-4 gap-5 flex flex-col text-gray-color items-center md:w-2/6 md:items-start'>
           <h1 className='font-semibold text-3xl text-white-color'>
             Let&apos;s talk about anything.
           </h1>
@@ -54,11 +54,9 @@ const Contact = () => {
             </button>
           </div>
           <div className='flex flex-col gap-1 items-center md:items-start'>
-            <h3 className='text-secondary-color font-medium'>Stay Connected</h3>
-            <p className='text-black-color'>Calamba, Laguna</p>
-            <p className='text-secondary-color font-medium'>
-              bustarde.aj@gmail.com
-            </p>
+            <h3 className='font-bold'>Stay Connected</h3>
+            <p>Calamba, Laguna</p>
+            <p>bustarde.aj@gmail.com</p>
           </div>
           <div className='flex flex-row gap-2'>
             {links.map((link, index) => (
