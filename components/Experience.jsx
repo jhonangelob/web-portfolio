@@ -1,6 +1,6 @@
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 import React from 'react';
-import { motion } from 'framer-motion';
 
 import {
   contentful,
@@ -16,7 +16,7 @@ import {
   reactjs,
   sass,
   tailwindcss,
-} from '../assets/_index';
+} from '../pages/assets/_index';
 
 const frontend = [html, css, javascript, reactjs, sass, nextjs, tailwindcss];
 const backend = [nodejs, firebase];
