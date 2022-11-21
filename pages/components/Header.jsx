@@ -1,7 +1,8 @@
 import React from 'react';
 import { SocialIcon } from 'react-social-icons';
-import { BsFillChatRightTextFill } from 'react-icons/bs';
+import { FaRegEnvelope } from 'react-icons/fa';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 const links = [
   'https://www.linkedin.com/in/jhonangelob',
@@ -39,16 +40,20 @@ const Header = () => {
         animate={{ x: 0, opacity: 1, scale: 1 }}
         transition={{ duration: 1 }}
       >
-        <SocialIcon
-          network='email'
-          className='dark:fill-white-color '
-          fgColor='primary-color'
-          bgColor='transparent'
-          style={{ width: 40, height: 40 }}
-        />
-        <p className='font-semibold text-sm text-primary-color uppercase hidden md:inline-flex dark:text-white-color'>
-          Get in Touch
-        </p>
+        <Link
+          href='#contact'
+          className='flex flex-row items-center cursor-pointer gap-2'
+        >
+          <FaRegEnvelope
+            className='dark:fill-white-color '
+            fgColor='primary-color'
+            bgColor='transparent'
+            style={{ width: 20, height: 20 }}
+          />
+          <p className='font-semibold text-sm text-primary-color uppercase hidden md:inline-flex dark:text-white-color'>
+            Get in Touch
+          </p>
+        </Link>
       </motion.div>
     </header>
   );
