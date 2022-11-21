@@ -11,10 +11,10 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 
 export default function Home() {
-  const { systemTheme, theme, setTheme } = useTheme();
+  const { systemTheme, theme, setTheme } = useTheme('light');
 
   const changeBackgroundColor = () => {
-    window.scrollY >= window.outerHeight * 0.6
+    window.scrollY >= window.outerHeight * 0.4
       ? setTheme('dark')
       : setTheme('light');
   };
