@@ -53,9 +53,9 @@ function Experience() {
         </motion.span>
         .
       </h1>
-      <div className='flex flex-col w-full gap-5 md:flex-row text-secondary-color'>
+      <div className='flex flex-col w-full gap-10 md:flex-row text-secondary-color'>
         <motion.div
-          className='md:w-3/6 flex flex-col gap-y-5'
+          className='md:w-3/6 flex flex-col gap-4'
           whileInView={{
             opacity: [0, 1],
             color: ['#696969', '#c4c4c4'],
@@ -134,9 +134,13 @@ function Experience() {
           }}
         >
           <h3 className='text-accent-color'>Experience/s</h3>
-          <p>2022</p>
-          <h3 className='text-white-color font-medium'>Web Developer Intern</h3>
-          <p>Symph, Inc.</p>
+          <div>
+            <p>2022</p>
+            <h3 className='text-white-color font-medium'>
+              Web Developer Intern
+            </h3>
+            <p>Symph, Inc.</p>
+          </div>
         </motion.div>
       </div>
     </div>
