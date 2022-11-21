@@ -62,6 +62,7 @@ function Experience() {
           }}
           transition={{
             duration: 1,
+            delay: 0.5,
           }}
         >
           <h3 className='text-accent-color'>Technologies</h3>
@@ -129,7 +130,7 @@ function Experience() {
           }}
           transition={{
             duration: 1,
-            delay: 0.5,
+            delay: 0.75,
           }}
         >
           <h3 className='text-accent-color'>Experience/s</h3>
