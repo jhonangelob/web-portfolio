@@ -1,8 +1,8 @@
-import React from 'react';
-import { SocialIcon } from 'react-social-icons';
-import { FaRegEnvelope } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import React from 'react';
+import { FaRegEnvelope } from 'react-icons/fa';
+import { SocialIcon } from 'react-social-icons';
 
 const links = [
   'https://www.linkedin.com/in/jhonangelob',

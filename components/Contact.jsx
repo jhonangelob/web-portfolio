@@ -1,6 +1,6 @@
 import React from 'react';
-import { SocialIcon } from 'react-social-icons';
 import { FaChevronUp } from 'react-icons/fa';
+import { SocialIcon } from 'react-social-icons';
 
 const links = [
   'https://www.linkedin.com/in/jhonangelob',

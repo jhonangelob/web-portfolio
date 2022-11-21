@@ -16,7 +16,7 @@ import {
   reactjs,
   sass,
   tailwindcss,
-} from '../pages/assets/_index';
+} from '../assets/_index';
 
 const frontend = [html, css, javascript, reactjs, sass, nextjs, tailwindcss];
 const backend = [nodejs, firebase];
