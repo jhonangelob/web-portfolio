@@ -5,15 +5,15 @@ const About = () => {
   return (
     <div className='flex flex-col justify-center p-5 max-w-6xl m-auto h-screen'>
       <h1 className='text-primary-color text-5xl leading-normal font-bold md:text-8xl dark:text-secondary-color'>
-        I specializes in{' '}
+        I specialize in{' '}
         <motion.span
           className='text-secondary-color'
           whileInView={{
+            opacity: [0, 1],
             color: '#ff0049',
           }}
           transition={{
-            duration: 0.5,
-            delay: 0.25,
+            duration: 1,
           }}
         >
           Front-End
@@ -22,11 +22,11 @@ const About = () => {
         <motion.span
           className='text-secondary-color'
           whileInView={{
+            opacity: [0, 1],
             color: '#ff0049',
           }}
           transition={{
-            duration: 0.5,
-            delay: 0.5,
+            duration: 1,
           }}
         >
           UI/UX
