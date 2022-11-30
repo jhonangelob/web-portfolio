@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { React, useEffect, useState } from 'react';
+import { React } from 'react';
 import { SocialIcon } from 'react-social-icons';
 
 const links = [
@@ -9,35 +9,16 @@ const links = [
 ];
 
 const Contact = () => {
-  const [isMobile, setIsMobile] = useState();
-  const animateY = isMobile
-    ? {
-        visible: {
-          opacity: 1,
-          y: 0,
-          transition: {
-            duration: 0.5,
-          },
-        },
-        hidden: { opacity: 0, y: 40 },
-      }
-    : {
-        visible: {
-          opacity: 1,
-          x: 0,
-          transition: {
-            duration: 1,
-          },
-        },
-        hidden: { opacity: 0, x: 100 },
-      };
-
-  useEffect(() => {
-    const resizeHandler = () => {
-      window.innerWidth > 640 ? setIsMobile(false) : setIsMobile(true);
-    };
-    window.addEventListener('resize', resizeHandler);
-  }, [isMobile]);
+  let animateY = {
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+      },
+    },
+    hidden: { opacity: 0, y: 40 },
+  };
 
   return (
     <div
