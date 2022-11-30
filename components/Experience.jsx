@@ -41,12 +41,11 @@ function Experience() {
         and{' '}
         <motion.span
           whileInView={{
-            opacity: [0, 1],
+            opacity: [0, 0.5, 1],
             color: ['#696969', '#c4c4c4'],
           }}
           transition={{
             duration: 1,
-            delay: 0.5,
           }}
         >
           Experience
@@ -54,22 +53,20 @@ function Experience() {
         .
       </h1>
       <div className='flex flex-col w-full gap-10 md:flex-row text-secondary-color'>
-        <motion.div
-          className='md:w-3/6 flex flex-col gap-4'
-          whileInView={{
-            opacity: [0, 1],
-            color: ['#696969', '#c4c4c4'],
-          }}
-          transition={{
-            duration: 1,
-            delay: 0.5,
-          }}
-        >
+        <div className='md:w-3/6 flex flex-col gap-4'>
           <h3 className='text-accent-color'>Technologies</h3>
           <p className='italic'>
             The technologies I use for front-end development
           </p>
-          <div className='flex gap-5 flex-wrap'>
+          <motion.div
+            className='flex gap-5 flex-wrap'
+            whileInView={{
+              opacity: [0, 1],
+              transition: {
+                duration: 1,
+              },
+            }}
+          >
             {frontend?.map((item, index) => (
               <div
                 key={index}
@@ -83,11 +80,19 @@ function Experience() {
                 />
               </div>
             ))}
-          </div>
-          <p className='italic'>
+          </motion.div>
+          <p className='italic mt-4'>
             The technologies I use for back-end development
           </p>
-          <div className='flex gap-5'>
+          <motion.div
+            className='flex flex-row gap-5'
+            whileInView={{
+              opacity: [0, 1],
+              transition: {
+                duration: 1,
+              },
+            }}
+          >
             {backend?.map((item, index) => (
               <div
                 key={index}
@@ -102,9 +107,17 @@ function Experience() {
                 />
               </div>
             ))}
-          </div>
-          <p className='italic'>others...</p>
-          <div className='flex gap-5'>
+          </motion.div>
+          <p className='italic mt-4'>others...</p>
+          <motion.div
+            className='flex gap-5'
+            whileInView={{
+              opacity: [0, 1],
+              transition: {
+                duration: 1,
+              },
+            }}
+          >
             {others?.map((item, index) => (
               <div
                 key={index}
@@ -120,28 +133,26 @@ function Experience() {
                 />
               </div>
             ))}
-          </div>
-        </motion.div>
-        <motion.div
-          className='md:w-3/6 flex flex-col gap-2'
-          whileInView={{
-            opacity: [0, 1],
-            color: ['#696969', '#c4c4c4'],
-          }}
-          transition={{
-            duration: 1,
-            delay: 0.75,
-          }}
-        >
+          </motion.div>
+        </div>
+        <div className='md:w-3/6 flex flex-col gap-2'>
           <h3 className='text-accent-color'>Experience/s</h3>
-          <div>
+          <motion.div
+            whileInView={{
+              opacity: [0, 1],
+              y: [20, 0],
+              transition: {
+                duration: 0.5,
+              },
+            }}
+          >
             <p>2022</p>
             <h3 className='text-white-color font-medium'>
               Web Developer Intern
             </h3>
             <p>Symph, Inc.</p>
-          </div>
-        </motion.div>
+          </motion.div>
+        </div>
       </div>
     </div>
   );
