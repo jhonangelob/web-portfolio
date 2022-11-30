@@ -1,4 +1,5 @@
-import React from 'react';
+import { motion } from 'framer-motion';
+import { React, useEffect, useState } from 'react';
 import { SocialIcon } from 'react-social-icons';
 
 const links = [
@@ -8,6 +9,36 @@ const links = [
 ];
 
 const Contact = () => {
+  const [isMobile, setIsMobile] = useState();
+  const animateY = isMobile
+    ? {
+        visible: {
+          opacity: 1,
+          y: 0,
+          transition: {
+            duration: 0.5,
+          },
+        },
+        hidden: { opacity: 0, y: 40 },
+      }
+    : {
+        visible: {
+          opacity: 1,
+          x: 0,
+          transition: {
+            duration: 1,
+          },
+        },
+        hidden: { opacity: 0, x: 100 },
+      };
+
+  useEffect(() => {
+    const resizeHandler = () => {
+      window.innerWidth > 640 ? setIsMobile(false) : setIsMobile(true);
+    };
+    window.addEventListener('resize', resizeHandler);
+  }, [isMobile]);
+
   return (
     <div
       className='flex flex-col max-w-4xl justify-center min-h-screen p-5 m-auto md:mt-0'
@@ -16,15 +47,28 @@ const Contact = () => {
       <h1 className='font-bold text-6xl mb-10 text-center text-black-color md:text-9xl'>
         Contact
       </h1>
-      <h3 className='text-2xl font-bold mb-5 md:text-3xl text-secondary-color'>
+      <motion.h3
+        whileInView={{ opacity: [0, 1], x: [-20, 0] }}
+        transition={{ duration: 1 }}
+        className='text-2xl font-bold mb-5 md:text-3xl text-secondary-color'
+      >
         Any <span className='text-black-color'>Question?</span>
-      </h3>
+      </motion.h3>
       <div className='w-100 flex flex-col gap-10 md:flex-row '>
         <div className='w-100 md:w-4/6'>
-          <h3 className='font-semibold mb-4'>
+          <motion.h3
+            whileInView={{ opacity: [0, 1] }}
+            transition={{ duration: 1 }}
+            className='font-semibold mb-4'
+          >
             Leave me a <span className='text-accent-color'>message</span>
-          </h3>
-          <form action='' className='flex flex-col gap-2 text-base font-light'>
+          </motion.h3>
+          <motion.form
+            whileInView={{ opacity: [0, 1], y: [40, 0] }}
+            transition={{ duration: 0.75 }}
+            action=''
+            className='flex flex-col gap-4 text-base font-light'
+          >
             <input
               type='text'
               name='email'
@@ -44,9 +88,14 @@ const Contact = () => {
             <button className='p-3 w-100 font-semibold bg-accent-color md:w-3/6 md:self-end'>
               SEND
             </button>
-          </form>
+          </motion.form>
         </div>
-        <div className='w-100 gap-2 flex flex-col text-center md:text-left text-gray-color items-center md:w-2/6 md:items-start md:pl-4'>
+        <motion.div
+          initial='hidden'
+          whileInView='visible'
+          variants={animateY}
+          className='w-100 gap-2 flex flex-col text-center md:text-left text-gray-color items-center md:w-2/6 md:items-start md:pl-4'
+        >
           <h1 className='font-semibold text-3xl text-white-color '>
             Let&apos;s talk about anything.
           </h1>
@@ -72,7 +121,7 @@ const Contact = () => {
               />
             ))}
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );
