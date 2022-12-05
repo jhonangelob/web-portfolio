@@ -18,8 +18,17 @@ import {
   tailwindcss,
 } from '../assets/_index';
 
-const frontend = [html, css, javascript, reactjs, sass, nextjs, tailwindcss];
-const backend = [nodejs, firebase];
+const technologies = [
+  html,
+  css,
+  javascript,
+  reactjs,
+  sass,
+  nextjs,
+  tailwindcss,
+  nodejs,
+  firebase,
+];
 const others = [git, npm, figma, contentful];
 
 function Experience() {
@@ -56,10 +65,10 @@ function Experience() {
         <div className='md:w-3/6 flex flex-col gap-4'>
           <h3 className='text-accent-color'>Technologies</h3>
           <p className='italic'>
-            The technologies I use for front-end development
+            The technologies I use for front-end and back-end development.
           </p>
           <motion.div
-            className='flex gap-5 flex-wrap'
+            className='flex gap-6 flex-wrap'
             whileInView={{
               opacity: [0, 1],
               transition: {
@@ -67,50 +76,28 @@ function Experience() {
               },
             }}
           >
-            {frontend?.map((item, index) => (
-              <div
-                key={index}
-                style={{ width: '40px', height: '40px', position: 'relative' }}
-              >
-                <Image
-                  className='md:grayscale md:hover:grayscale-0'
-                  src={item}
-                  alt={item}
-                  layout='fill'
-                />
-              </div>
-            ))}
-          </motion.div>
-          <p className='italic mt-4'>
-            The technologies I use for back-end development
-          </p>
-          <motion.div
-            className='flex flex-row gap-5'
-            whileInView={{
-              opacity: [0, 1],
-              transition: {
-                duration: 1,
-              },
-            }}
-          >
-            {backend?.map((item, index) => (
-              <div
-                key={index}
-                style={{ width: '40px', height: '40px', position: 'relative' }}
-              >
-                <Image
+            {technologies &&
+              technologies.map((item, index) => (
+                <div
                   key={index}
-                  className='md:grayscale md:hover:grayscale-0'
-                  src={item}
-                  alt={item}
-                  layout='fill'
-                />
-              </div>
-            ))}
+                  style={{
+                    width: '40px',
+                    height: '40px',
+                    position: 'relative',
+                  }}
+                >
+                  <Image
+                    className='transition ease-in-out duration-200 md:grayscale md:hover:grayscale-0 md:hover:scale-110'
+                    src={item}
+                    alt={item}
+                    layout='fill'
+                  />
+                </div>
+              ))}
           </motion.div>
           <p className='italic mt-4'>others...</p>
           <motion.div
-            className='flex gap-5'
+            className='flex gap-6'
             whileInView={{
               opacity: [0, 1],
               transition: {
@@ -125,7 +112,7 @@ function Experience() {
               >
                 <Image
                   key={index}
-                  className='md:grayscale md:hover:grayscale-0'
+                  className='transition ease-in-out duration-200 md:grayscale md:hover:grayscale-0 md:hover:scale-110'
                   src={item}
                   alt={item}
                   width={40}
