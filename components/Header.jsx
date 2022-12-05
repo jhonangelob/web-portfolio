@@ -14,9 +14,9 @@ const Header = () => {
   return (
     <header
       className='
-    sticky top-0 bg-wgite-color min-w-screen z-20 p-4 cursor-pointer dark:bg-bg-color'
+    sticky top-0 bg-white-color min-w-screen z-20 p-4 cursor-pointer dark:bg-bg-color opacity-95'
     >
-      <div className='flex flex-row max-w-7xl mx-auto items-center justify-between'>
+      <div className='flex flex-row max-w-7xl mx-auto overflow-hidden items-center justify-between md:overflow-visible'>
         <motion.div
           className='flex flex-row items-center'
           initial={{ x: -500, opacity: 0, scale: 0.5 }}
