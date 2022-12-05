@@ -13,7 +13,7 @@ export default function Home() {
   const { systemTheme, theme, setTheme } = useTheme('light');
 
   const changeBackgroundColor = () => {
-    window.scrollY >= window.outerHeight * 0.4
+    window.scrollY >= window.innerHeight * 0.4
       ? setTheme('dark')
       : setTheme('light');
   };
@@ -23,7 +23,7 @@ export default function Home() {
   });
 
   return (
-    <React.Fragment>
+    <div className='min-h-screen dark:bg-bg-color scrollbar-thin scrollbar-thumb-accent-color scrollbar-track-white-color hover:scrollbar-thumb-accent-color'>
       <Head>
         <title>jhn</title>
         <meta
@@ -32,7 +32,7 @@ export default function Home() {
         />
       </Head>
       <Header />
-      <section className='max-w-screen dark:bg-bg-color'>
+      <section className='bg-white-color dark:bg-bg-color'>
         <Hero />
         <About />
         <Projects />
@@ -40,6 +40,6 @@ export default function Home() {
         <Contact />
       </section>
       <Footer />
-    </React.Fragment>
+    </div>
   );
 }
