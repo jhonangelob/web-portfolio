@@ -8,18 +8,18 @@ const links = [
   'https://www.facebook.com/sqmbi',
 ];
 
-const Contact = () => {
-  let animateY = {
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.5,
-      },
+const animateY = {
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
     },
-    hidden: { opacity: 0, y: 40 },
-  };
+  },
+  hidden: { opacity: 0, y: 40 },
+};
 
+const Contact = () => {
   return (
     <div
       className='flex flex-col max-w-4xl justify-center min-h-screen p-5 m-auto md:mt-0'
@@ -53,16 +53,16 @@ const Contact = () => {
             <input
               type='text'
               name='email'
-              className='p-3 bg-bg-color border-secondary-color border-b outline-none'
-              placeholder='Full Name'
+              className='p-3 bg-bg-color border-secondary-color border-b outline-none active:border-b-accent-color focus:border-b-accent-color'
+              placeholder='Name'
             />
             <input
               type='text'
-              className=' p-3 bg-bg-color border-secondary-color border-b outline-none'
+              className=' p-3 bg-bg-color border-secondary-color border-b outline-none active:border-b-accent-color focus:border-b-accent-color'
               placeholder='Email'
             />
             <textarea
-              className='p-3  bg-bg-color border-secondary-color border-b outline-none'
+              className='p-3 bg-bg-color border-secondary-color border-b outline-none active:border-b-accent-color focus:border-b-accent-color resize-none'
               placeholder='Your Messsage'
               rows='4'
             />
@@ -94,7 +94,7 @@ const Contact = () => {
             {links.map((link, index) => (
               <SocialIcon
                 key={`${link}-${index}`}
-                className='dark:fill-white-color '
+                className='fill-white-color '
                 url={link}
                 fgColor='primary-color'
                 bgColor='transparent'
