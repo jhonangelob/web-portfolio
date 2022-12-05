@@ -1,5 +1,7 @@
+import emailjs from '@emailjs/browser';
 import { motion } from 'framer-motion';
-import { React } from 'react';
+import { React, useRef, useState } from 'react';
+import { FaFilePdf } from 'react-icons/fa';
 import { SocialIcon } from 'react-social-icons';
 
 const links = [
@@ -20,6 +22,28 @@ const animateY = {
 };
 
 const Contact = () => {
+  const [isSending, setIsSending] = useState(false);
+  const form = useRef();
+
+  const sendEmail = async (e) => {
+    e.preventDefault();
+    setIsSending(true);
+    try {
+      await emailjs.sendForm(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+        form.current,
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+      );
+      setIsSending(false);
+      console.log('Success');
+    } catch (error) {
+      setIsSending(false);
+      console.error('Failed');
+    }
+    e.target.reset();
+  };
+
   return (
     <div
       className='flex flex-col max-w-4xl justify-center min-h-screen p-5 m-auto md:mt-0'
@@ -45,6 +69,8 @@ const Contact = () => {
             Leave me a <span className='text-accent-color'>message</span>
           </motion.h3>
           <motion.form
+            onSubmit={sendEmail}
+            ref={form}
             whileInView={{ opacity: [0, 1], y: [40, 0] }}
             transition={{ duration: 0.75 }}
             action=''
@@ -52,23 +78,38 @@ const Contact = () => {
           >
             <input
               type='text'
-              name='email'
+              name='name'
               className='p-3 bg-bg-color border-secondary-color border-b outline-none active:border-b-accent-color focus:border-b-accent-color'
               placeholder='Name'
+              required
             />
             <input
               type='text'
+              name='email'
               className=' p-3 bg-bg-color border-secondary-color border-b outline-none active:border-b-accent-color focus:border-b-accent-color'
               placeholder='Email'
+              required
             />
             <textarea
+              name='message'
               className='p-3 bg-bg-color border-secondary-color border-b outline-none active:border-b-accent-color focus:border-b-accent-color resize-none'
               placeholder='Your Messsage'
               rows='4'
+              required
             />
-            <button className='p-3 w-100 font-semibold bg-accent-color md:w-3/6 md:self-end'>
-              SEND
-            </button>
+
+            {isSending ? (
+              <button
+                className='p-3 w-100 font-semibold bg-accent-color md:w-3/6 md:self-end opacity-60'
+                disabled
+              >
+                SENDING...
+              </button>
+            ) : (
+              <button className='p-3 w-100 font-semibold bg-accent-color md:w-3/6 md:self-end md:hover:bg-opacity-60 transition-all duration-200'>
+                SEND
+              </button>
+            )}
           </motion.form>
         </div>
         <motion.div
@@ -77,12 +118,13 @@ const Contact = () => {
           variants={animateY}
           className='w-100 gap-2 flex flex-col text-center md:text-left text-gray-color items-center md:w-2/6 md:items-start md:pl-4'
         >
-          <h1 className='font-semibold text-3xl text-white-color '>
+          <h1 className='font-semibold text-3xl text-white-color'>
             Let&apos;s talk about anything.
           </h1>
-          <div className='flex flex-col text-sm gap-2 '>
-            <p>You can learn more about me on my Resume.</p>
-            <button className='text-accent-color text-lg font-semibold text-center md:text-left'>
+          <div className='flex flex-col text-sm gap-2'>
+            <p>You can find out more about me on my Resume.</p>
+            <button className='md:flex flex-row rounded-sm text-accent-color text-lg font-semibold items-center text-center gap-2 md:text-left md:hover:text-opacity-80 transition-all'>
+              <FaFilePdf className='hidden md:block' />
               Grab a copy
             </button>
           </div>
@@ -94,7 +136,7 @@ const Contact = () => {
             {links.map((link, index) => (
               <SocialIcon
                 key={`${link}-${index}`}
-                className='fill-white-color '
+                className='fill-white-color md:hover:scale-110 transition ease-in-out duration-250'
                 url={link}
                 fgColor='primary-color'
                 bgColor='transparent'
