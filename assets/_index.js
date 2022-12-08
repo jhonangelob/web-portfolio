@@ -6,7 +6,6 @@ import git from './git.svg';
 import html from './html.svg';
 import javascript from './javascript.svg';
 import nextjs from './nextjs.svg';
-import nodejs from './nodejs.svg';
 import npm from './npm.svg';
 import reactjs from './reactjs.svg';
 import sass from './sass.svg';
@@ -21,7 +20,6 @@ export {
   html,
   javascript,
   nextjs,
-  nodejs,
   npm,
   reactjs,
   sass,
