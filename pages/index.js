@@ -1,6 +1,6 @@
 import { useTheme } from 'next-themes';
 import Head from 'next/head';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import About from '../components/About';
 import Contact from '../components/Contact';
 import Experience from '../components/Experience';
@@ -10,20 +10,25 @@ import Hero from '../components/Hero';
 import Projects from '../components/Projects';
 
 export default function Home() {
-  const { systemTheme, theme, setTheme } = useTheme('light');
-
-  const changeBackgroundColor = () => {
-    window.scrollY >= window.innerHeight * 0.4
-      ? setTheme('dark')
-      : setTheme('light');
-  };
+  const [mounted, setMounted] = useState(false);
+  const { theme, setTheme } = useTheme();
 
   useEffect(() => {
-    window.addEventListener('scroll', changeBackgroundColor);
-  });
+    setMounted(true);
+
+    window.addEventListener('scroll', () => {
+      window.scrollY >= window.innerHeight * 0.4
+        ? setTheme('dark')
+        : setTheme('light');
+    });
+  }, [setTheme]);
+
+  if (!mounted) {
+    return null;
+  }
 
   return (
-    <div className='min-h-screen dark:bg-bg-color scrollbar-thin scrollbar-thumb-accent-color scrollbar-track-white-color hover:scrollbar-thumb-accent-color'>
+    <div className='min-h-screen dark:bg-background-color'>
       <Head>
         <title>jhn</title>
         <meta
@@ -32,7 +37,7 @@ export default function Home() {
         />
       </Head>
       <Header />
-      <section className='bg-white-color dark:bg-bg-color'>
+      <section className='bg-light-color dark:bg-background-color '>
         <Hero />
         <About />
         <Projects />
