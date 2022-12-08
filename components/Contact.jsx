@@ -46,10 +46,10 @@ const Contact = () => {
 
   return (
     <div
-      className='flex flex-col max-w-4xl justify-center min-h-screen p-5 m-auto md:mt-0'
+      className='flex flex-col max-w-4xl justify-center min-h-screen p-6 m-auto md:mt-0'
       id='contact'
     >
-      <h1 className='font-bold text-6xl mb-10 text-center text-black-color md:text-9xl'>
+      <h1 className='font-bold text-6xl mb-10 text-center text-dark-color md:text-9xl'>
         Contact
       </h1>
       <motion.h3
@@ -57,7 +57,7 @@ const Contact = () => {
         transition={{ duration: 1 }}
         className='text-2xl font-bold mb-5 md:text-3xl text-secondary-color'
       >
-        Any <span className='text-black-color'>Question?</span>
+        Any <span className='text-dark-color'>Question?</span>
       </motion.h3>
       <div className='w-100 flex flex-col gap-10 md:flex-row '>
         <div className='w-100 md:w-4/6'>
@@ -79,20 +79,20 @@ const Contact = () => {
             <input
               type='text'
               name='name'
-              className='p-3 bg-bg-color border-secondary-color border-b outline-none active:border-b-accent-color focus:border-b-accent-color'
+              className='p-3 bg-background-color border-secondary-color border-b outline-none active:border-b-accent-color focus:border-b-accent-color'
               placeholder='Name'
               required
             />
             <input
               type='text'
               name='email'
-              className=' p-3 bg-bg-color border-secondary-color border-b outline-none active:border-b-accent-color focus:border-b-accent-color'
+              className='p-3 bg-background-color border-secondary-color border-b outline-none active:border-b-accent-color focus:border-b-accent-color'
               placeholder='Email'
               required
             />
             <textarea
               name='message'
-              className='p-3 bg-bg-color border-secondary-color border-b outline-none active:border-b-accent-color focus:border-b-accent-color resize-none'
+              className='p-3 bg-background-color border-secondary-color border-b outline-none active:border-b-accent-color focus:border-b-accent-color resize-none'
               placeholder='Your Messsage'
               rows='4'
               required
@@ -118,8 +118,8 @@ const Contact = () => {
           variants={animateY}
           className='w-100 gap-2 flex flex-col text-center md:text-left text-gray-color items-center md:w-2/6 md:items-start md:pl-4'
         >
-          <h1 className='font-semibold text-3xl text-white-color'>
-            Let&apos;s talk about anything.
+          <h1 className='font-semibold text-3xl text-light-color'>
+            Let&apos;s talk about it.
           </h1>
           <div className='flex flex-col text-sm gap-2'>
             <p>You can find out more about me on my Resume.</p>
@@ -136,7 +136,7 @@ const Contact = () => {
             {links.map((link, index) => (
               <SocialIcon
                 key={`${link}-${index}`}
-                className='fill-white-color md:hover:scale-110 transition ease-in-out duration-250'
+                className='fill-light-color md:hover:scale-110 transition ease-in-out duration-250'
                 url={link}
                 fgColor='primary-color'
                 bgColor='transparent'

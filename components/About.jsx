@@ -3,8 +3,11 @@ import React from 'react';
 
 const About = () => {
   return (
-    <div className='flex flex-co justify-center items-center p-5 max-w-6xl m-auto h-screen'>
-      <h1 className='text-primary-color text-5xl leading-normal font-bold md:text-8xl dark:text-secondary-color'>
+    <div
+      className='flex flex-col gap-10 justify-center items-center p-6 max-w-4xl m-auto h-[calc(100vh-64px)]'
+      id='about'
+    >
+      <h1 className='text-primary-color text-6xl md:leading-tight font-bold md:text-7xl dark:text-secondary-color'>
         I specialize in{' '}
         <motion.span
           className='text-secondary-color'
