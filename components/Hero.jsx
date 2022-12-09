@@ -45,7 +45,7 @@ const Hero = () => {
           Currently focused on Web/Mobile Development using React Technologies.
         </motion.p>
         <motion.li
-          className='list-none'
+          className='list-none mt-4 w-fit'
           whileHover={{
             x: [0, 10],
             transition: {
@@ -55,7 +55,7 @@ const Hero = () => {
         >
           <Link
             href='#about'
-            className='uppercase w-fit font-medium p-2 border-l-4 items-center border-accent-color'
+            className='uppercase w-fit font-medium p-2 border-l-4 items-center border-accent-color active:outline-none focus:outline-none'
           >
             Scroll for More
           </Link>
