@@ -15,7 +15,7 @@ import {
   reactjs,
   sass,
   tailwindcss,
-} from '../assets/_index';
+} from '../public/_index';
 
 const technologies = [
   html,
@@ -89,17 +89,15 @@ function Experience() {
               <div
                 key={index}
                 style={{
-                  width: '35px',
-                  height: '35px',
-                  position: 'relative',
+                  width: 35,
+                  height: 35,
                 }}
               >
                 <Image
                   key={index}
-                  className='md:hover:scale-110 transition ease-in-out duration-200 cursor-pointer'
+                  className='md:hover:scale-110 transition ease-in-out duration-200 cursor-pointer w-full h-auto'
                   src={item}
                   alt={item}
-                  layout='fill'
                 />
               </div>
             ))}
@@ -116,16 +114,12 @@ function Experience() {
             }}
           >
             {others?.map((item, index) => (
-              <div
-                key={index}
-                style={{ width: '35px', height: '35px', position: 'relative' }}
-              >
+              <div key={index} style={{ width: 35, height: 35 }}>
                 <Image
                   key={index}
-                  className='md:hover:scale-110 transition ease-in-out duration-200 cursor-pointer'
+                  className='md:hover:scale-110 transition ease-in-out duration-200 cursor-pointer w-full h-auto'
                   src={item}
                   alt={item}
-                  layout='fill'
                 />
               </div>
             ))}
