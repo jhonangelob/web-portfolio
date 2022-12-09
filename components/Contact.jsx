@@ -1,8 +1,10 @@
-import emailjs from '@emailjs/browser';
 import { motion } from 'framer-motion';
-import { React, useRef, useState } from 'react';
+import { React, useEffect, useRef, useState } from 'react';
 import { FaFilePdf } from 'react-icons/fa';
 import { SocialIcon } from 'react-social-icons';
+
+import { sendEmail } from '../configs/sendEmail';
+import { fetchData } from '../configs/useContentful';
 
 const links = [
   'https://www.linkedin.com/in/jhonangelob',
@@ -23,26 +25,27 @@ const animateY = {
 
 const Contact = () => {
   const [isSending, setIsSending] = useState(false);
+  const [files, setFiles] = useState([]);
   const form = useRef();
 
-  const sendEmail = async (e) => {
+  const submitHandler = async (e) => {
     e.preventDefault();
     setIsSending(true);
-    try {
-      await emailjs.sendForm(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
-        form.current,
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
-      );
-      setIsSending(false);
-      console.log('Success');
-    } catch (error) {
-      setIsSending(false);
-      console.error('Failed');
-    }
+
+    sendEmail(form.current)
+      .then((response) => setIsSending(false))
+      .catch((error) => setIsSending(false));
+
     e.target.reset();
   };
+
+  useEffect(() => {
+    let isSubscribed = true;
+    fetchData('resume').then((response) =>
+      isSubscribed ? setFiles(response) : null
+    );
+    return () => (isSubscribed = false);
+  }, []);
 
   return (
     <div
@@ -69,7 +72,7 @@ const Contact = () => {
             Leave me a <span className='text-accent-color'>message</span>
           </motion.h3>
           <motion.form
-            onSubmit={sendEmail}
+            onSubmit={submitHandler}
             ref={form}
             whileInView={{ opacity: [0, 1], y: [40, 0] }}
             transition={{ duration: 0.75 }}
