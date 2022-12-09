@@ -15,17 +15,15 @@ export default function Home() {
 
   useEffect(() => {
     setMounted(true);
-
     window.addEventListener('scroll', () => {
       window.scrollY >= window.innerHeight * 0.4
         ? setTheme('dark')
         : setTheme('light');
     });
+    return () => {
+      setMounted(false);
+    };
   }, [setTheme]);
-
-  if (!mounted) {
-    return null;
-  }
 
   return (
     <div className='min-h-screen dark:bg-background-color'>
