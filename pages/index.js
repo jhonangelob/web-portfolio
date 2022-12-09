@@ -1,6 +1,6 @@
 import { useTheme } from 'next-themes';
 import Head from 'next/head';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import About from '../components/About';
 import Contact from '../components/Contact';
 import Experience from '../components/Experience';
@@ -10,19 +10,16 @@ import Hero from '../components/Hero';
 import Projects from '../components/Projects';
 
 export default function Home() {
-  const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
 
   useEffect(() => {
-    setMounted(true);
+    let isMounted = true;
     window.addEventListener('scroll', () => {
       window.scrollY >= window.innerHeight * 0.4
         ? setTheme('dark')
         : setTheme('light');
     });
-    return () => {
-      setMounted(false);
-    };
+    return () => (isMounted = false);
   }, [setTheme]);
 
   return (
