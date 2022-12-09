@@ -1,3 +1,5 @@
+import emailjs from '@emailjs/browser';
+
 export const sendEmail = async (form) => {
   try {
     const data = await emailjs.sendForm(

@@ -13,7 +13,12 @@ export const fetchData = async (contentType) => {
       select: 'fields',
     });
     const sanitizedEntries = data.items.map((item) => {
-      return { ...item.fields };
+      if (contentType == 'resume') {
+        return item.fields.file.fields.file.url;
+      }
+      if (contentType == 'projects') {
+        return { ...item.fields };
+      }
     });
     return sanitizedEntries;
   } catch (error) {

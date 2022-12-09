@@ -25,17 +25,15 @@ const animateY = {
 
 const Contact = () => {
   const [isSending, setIsSending] = useState(false);
-  const [files, setFiles] = useState([]);
+  const [files, setFiles] = useState();
   const form = useRef();
 
   const submitHandler = async (e) => {
     e.preventDefault();
     setIsSending(true);
-
     sendEmail(form.current)
       .then((response) => setIsSending(false))
       .catch((error) => setIsSending(false));
-
     e.target.reset();
   };
 
@@ -100,19 +98,14 @@ const Contact = () => {
               rows='4'
               required
             />
-
-            {isSending ? (
-              <button
-                className='p-3 w-100 font-semibold bg-accent-color md:w-3/6 md:self-end opacity-60'
-                disabled
-              >
-                SENDING...
-              </button>
-            ) : (
-              <button className='p-3 w-100 font-semibold bg-accent-color md:w-3/6 md:self-end md:hover:bg-opacity-60 transition-all duration-200'>
-                SEND
-              </button>
-            )}
+            <button
+              className={`${
+                isSending ? 'opacity-60' : 'opacity-100'
+              } md:hover:bg-opacity-60 p-3 w-100 font-semibold bg-accent-color md:w-3/6 md:self-end transition-all duration-200`}
+              disabled={isSending}
+            >
+              {isSending ? 'SENDING...' : 'SEND'}
+            </button>
           </motion.form>
         </div>
         <motion.div
@@ -126,10 +119,16 @@ const Contact = () => {
           </h1>
           <div className='flex flex-col text-sm gap-2'>
             <p>You can find out more about me on my Resume.</p>
-            <button className='md:flex flex-row rounded-sm text-accent-color text-lg font-semibold items-center text-center gap-2 md:text-left md:hover:text-opacity-80 transition-all'>
+            <a
+              href={files}
+              className='md:flex flex-row rounded-sm text-accent-color text-lg font-semibold items-center text-center gap-2 md:text-left md:hover:text-opacity-80 transition-all'
+              rel='noopener noreferrer'
+              target='_blank'
+              download
+            >
               <FaFilePdf className='hidden md:block' />
               Grab a copy
-            </button>
+            </a>
           </div>
           <div className='flex flex-col text-sm gap-1 items-center md:items-start'>
             <span>Calamba, Laguna</span>
