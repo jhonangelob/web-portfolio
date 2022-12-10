@@ -3,7 +3,6 @@ const { defaultConfig } = require('next/dist/server/config-shared');
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ['./pages/**/*.{js,jsx}', './components/**/*.{js,jsx}'],
-  darkMode: 'class',
   theme: {
     colors: {
       'primary-color': '#303030',

@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { React, useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { FaFilePdf } from 'react-icons/fa';
 import { SocialIcon } from 'react-social-icons';
 

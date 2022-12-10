@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import React from 'react';
 
 const About = () => {
   return (
@@ -7,7 +6,7 @@ const About = () => {
       className='flex flex-col gap-10 justify-center items-center p-6 max-w-4xl m-auto h-screen'
       id='about'
     >
-      <h1 className='text-primary-color text-6xl md:leading-tight font-bold md:text-7xl dark:text-secondary-color'>
+      <h1 className='text-6xl text-secondary-color md:leading-tight font-bold md:text-7xl'>
         I specialize in{' '}
         <motion.span
           className='text-secondary-color'
