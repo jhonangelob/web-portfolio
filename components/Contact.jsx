@@ -1,31 +1,12 @@
 import { motion } from 'framer-motion';
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import { FaFilePdf } from 'react-icons/fa';
 import { SocialIcon } from 'react-social-icons';
-
 import { sendEmail } from '../configs/sendEmail';
-import { fetchData } from '../configs/useContentful';
 
-const links = [
-  'https://www.linkedin.com/in/jhonangelob',
-  'https://github.com/jhonangelob',
-  'https://www.facebook.com/sqmbi',
-];
-
-const animateY = {
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.5,
-    },
-  },
-  hidden: { opacity: 0, y: 40 },
-};
-
-const Contact = () => {
+const Contact = ({ resume }) => {
+  let download = resume[0].fields.file.fields.file.url;
   const [isSending, setIsSending] = useState(false);
-  const [files, setFiles] = useState();
   const form = useRef();
 
   const submitHandler = async (e) => {
@@ -36,14 +17,6 @@ const Contact = () => {
       .catch((error) => setIsSending(false));
     e.target.reset();
   };
-
-  useEffect(() => {
-    let isSubscribed = true;
-    fetchData('resume').then((response) =>
-      isSubscribed ? setFiles(response) : null
-    );
-    return () => (isSubscribed = false);
-  }, []);
 
   return (
     <div
@@ -109,9 +82,13 @@ const Contact = () => {
           </motion.form>
         </div>
         <motion.div
-          initial='hidden'
-          whileInView='visible'
-          variants={animateY}
+          whileInView={{
+            opacity: [0, 1],
+            y: [40, 0],
+            transition: {
+              duration: 0.5,
+            },
+          }}
           className='w-100 gap-2 flex flex-col text-center md:text-left text-gray-color items-center md:w-2/6 md:items-start md:pl-4'
         >
           <h1 className='font-semibold text-3xl text-light-color'>
@@ -120,7 +97,7 @@ const Contact = () => {
           <div className='flex flex-col text-sm gap-2'>
             <p>You can find out more about me on my Resume.</p>
             <a
-              href={files}
+              href={download}
               className='md:flex flex-row rounded-sm text-accent-color text-lg font-semibold items-center text-center gap-2 md:text-left md:hover:text-opacity-80 transition-all'
               rel='noopener noreferrer'
               target='_blank'
@@ -135,7 +112,11 @@ const Contact = () => {
             <span>bustarde.aj@gmail.com</span>
           </div>
           <div className='flex flex-row gap-2'>
-            {links.map((link, index) => (
+            {[
+              'https://www.linkedin.com/in/jhonangelob',
+              'https://github.com/jhonangelob',
+              'https://www.facebook.com/sqmbi',
+            ].map((link, index) => (
               <SocialIcon
                 key={`${link}-${index}`}
                 className='fill-light-color md:hover:scale-110 transition ease-in-out duration-250'
