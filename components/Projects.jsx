@@ -2,7 +2,6 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 
 const Projects = ({ projects }) => {
-  console.log(projects);
   return (
     <div className='min-h-screen flex flex-col justify-center items-center max-w-4xl p-6 m-auto text-dark-color'>
       <h1 className='font-bold text-6xl text-center text-dark-color mb-10 md:text-9xl'>
