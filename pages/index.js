@@ -18,9 +18,7 @@ export const getStaticProps = async () => {
   });
   const projects = await client.getEntries({
     content_type: 'projects',
-    select: 'fields',
   });
-
   return {
     props: {
       resume: resume.items,
@@ -31,7 +29,7 @@ export const getStaticProps = async () => {
 
 export default function Home({ resume, projects }) {
   return (
-    <div className='min-h-screen bg-background-color'>
+    <div className='min-h-screen'>
       <Head>
         <title>jhn</title>
         <meta
@@ -40,7 +38,7 @@ export default function Home({ resume, projects }) {
         />
       </Head>
       <Header />
-      <section className='bg-background-color '>
+      <section className='bg-background-color'>
         <Hero />
         <About />
         <Projects projects={projects} />
