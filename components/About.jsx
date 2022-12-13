@@ -11,11 +11,10 @@ const About = () => {
         <motion.span
           className='text-secondary-color'
           whileInView={{
-            opacity: [0, 1],
             color: '#ff0049',
           }}
           transition={{
-            duration: 1,
+            duration: 0.5,
           }}
         >
           Front-End
@@ -24,11 +23,10 @@ const About = () => {
         <motion.span
           className='text-secondary-color'
           whileInView={{
-            opacity: [0, 1],
             color: '#ff0049',
           }}
           transition={{
-            duration: 1,
+            duration: 0.5,
           }}
         >
           UI/UX

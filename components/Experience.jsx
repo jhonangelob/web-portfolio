@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-
 import {
   contentful,
   css,
@@ -79,8 +78,9 @@ function Experience() {
             className='flex gap-6 flex-wrap my-4'
             whileInView={{
               opacity: [0, 1],
+              y: [20, 0],
               transition: {
-                duration: 1,
+                duration: 0.5,
               },
             }}
           >
@@ -106,9 +106,9 @@ function Experience() {
             className='flex gap-6 flex-wrap my-4'
             whileInView={{
               opacity: [0, 1],
+              y: [20, 0],
               transition: {
-                duration: 1,
-                delay: 0.25,
+                duration: 0.5,
               },
             }}
           >

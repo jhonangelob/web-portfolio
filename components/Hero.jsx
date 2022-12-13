@@ -6,7 +6,7 @@ const Hero = () => {
     <div className='flex flex-col md:flex-row justify-center md:justify-start items-center p-6 gap-10 max-w-4xl m-auto h-[calc(100vh-64px)]'>
       <div className='md:w-5/6 flex flex-col gap-4'>
         <motion.h1
-          className='text-dark-color font-bold text-3xl'
+          className='text-secondary-color font-bold text-3xl'
           whileInView={{
             opacity: [0, 1],
             y: [-20, 0],

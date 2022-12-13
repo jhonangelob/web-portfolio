@@ -27,8 +27,8 @@ const Contact = ({ resume }) => {
         Contact
       </h1>
       <motion.h3
-        whileInView={{ opacity: [0, 1], x: [-20, 0] }}
-        transition={{ duration: 1 }}
+        whileInView={{ opacity: [0, 1], x: [-60, 0] }}
+        transition={{ duration: 0.5 }}
         className='text-2xl font-bold mb-5 md:text-3xl text-secondary-color'
       >
         Any <span className='text-dark-color'>Question?</span>
@@ -37,16 +37,16 @@ const Contact = ({ resume }) => {
         <div className='w-100 md:w-4/6'>
           <motion.h3
             whileInView={{ opacity: [0, 1] }}
-            transition={{ duration: 1 }}
-            className='font-semibold mb-4'
+            transition={{ duration: 0.5 }}
+            className='font-semibold mb-4 text-light-color'
           >
             Leave me a <span className='text-accent-color'>message</span>
           </motion.h3>
           <motion.form
             onSubmit={submitHandler}
             ref={form}
-            whileInView={{ opacity: [0, 1], y: [40, 0] }}
-            transition={{ duration: 0.75 }}
+            whileInView={{ opacity: [0, 1], y: [60, 0] }}
+            transition={{ duration: 0.5 }}
             action=''
             className='flex flex-col gap-4 text-base font-light'
           >
@@ -74,7 +74,7 @@ const Contact = ({ resume }) => {
             <button
               className={`${
                 isSending ? 'opacity-60' : 'opacity-100'
-              } md:hover:bg-opacity-60 p-3 w-100 font-semibold bg-accent-color md:w-3/6 md:self-end transition-all duration-200`}
+              } md:hover:bg-opacity-60 p-3 w-100 font-semibold text-light-color bg-accent-color md:w-3/6 md:self-end transition-all duration-200`}
               disabled={isSending}
             >
               {isSending ? 'SENDING...' : 'SEND'}
