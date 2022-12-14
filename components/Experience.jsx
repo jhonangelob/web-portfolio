@@ -130,7 +130,7 @@ const Experience = () => {
           <div className='flex flex-col gap-6'>
             {experience?.map((exp, index) => (
               <div key={index} className='item-center'>
-                <h3 className='text-dark-color dark:text-light-color font-bold text-md font-gilroy'>
+                <h3 className='text-dark-color dark:text-light-color font-bold text-md'>
                   {exp.position}
                 </h3>
                 <p className='text-sm'>{exp.company}</p>

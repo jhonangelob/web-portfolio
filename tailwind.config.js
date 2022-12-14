@@ -16,7 +16,6 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ['Poppins', 'sans-serif'],
-        gilroy: ['Gilroy', 'sans-serif'],
       },
     },
   },

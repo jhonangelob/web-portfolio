@@ -3,7 +3,7 @@ import Link from 'next/link';
 const Projects = ({ projects }) => {
   return (
     <div className='flex flex-col justify-center items-center max-w-4xl px-6 mx-auto my-auto md:my-16 min-h-fit'>
-      <h1 className='font-extrabold self-start md:self-center text-6xl text-dark-color dark:text-light-color mb-10 md:text-8xl font-gilroy'>
+      <h1 className='font-extrabold self-start md:self-center text-6xl text-dark-color dark:text-light-color mb-10 md:text-8xl'>
         Projects
       </h1>
       <div className='grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-2 w-full'>
@@ -21,7 +21,7 @@ const Projects = ({ projects }) => {
           >
             <Link
               href={project.fields.projectLink}
-              className='text-dark-color dark:text-light-color font-extrabold group-hover:text-accent-color text-xl mb-4 font-gilroy transition-all duration-300'
+              className='text-dark-color dark:text-light-color font-extrabold group-hover:text-accent-color text-xl mb-4 transition-all duration-300'
             >
               {project.fields.name}
             </Link>

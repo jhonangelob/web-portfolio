@@ -18,7 +18,7 @@ const Hero = () => {
           Hello, I&apos;m
         </motion.h1>
         <motion.h1
-          className='text-gray-color font-bold text-8xl font-gilroy'
+          className='text-gray-color font-bold text-8xl'
           whileInView={{
             opacity: [0, 1],
             y: [-20, 0],
