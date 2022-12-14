@@ -20,27 +20,27 @@ const Contact = ({ resume }) => {
 
   return (
     <div
-      className='flex flex-col max-w-4xl justify-center min-h-screen p-6 m-auto md:mt-0'
+      className='flex flex-col max-w-4xl justify-center p-6 mx-auto m-auto md:my-16 h-screen md:h-fit'
       id='contact'
     >
-      <h1 className='font-bold text-6xl mb-10 text-center text-dark-color md:text-9xl'>
+      <h1 className='font-extrabold text-6xl mb-10 text-center text-dark-color dark:text-light-color md:text-8xl font-gilroy'>
         Contact
       </h1>
       <motion.h3
         whileInView={{ opacity: [0, 1], x: [-60, 0] }}
         transition={{ duration: 0.5 }}
-        className='text-2xl font-bold mb-5 md:text-3xl text-secondary-color'
+        className='text-2xl font-bold mb-5 text-dark-color dark:text-light-color'
       >
-        Any <span className='text-dark-color'>Question?</span>
+        Any Question?
       </motion.h3>
       <div className='w-100 flex flex-col gap-10 md:flex-row '>
         <div className='w-100 md:w-4/6'>
           <motion.h3
             whileInView={{ opacity: [0, 1] }}
             transition={{ duration: 0.5 }}
-            className='font-semibold mb-4 text-light-color'
+            className='font-semibold mb-4 text-accent-color'
           >
-            Leave me a <span className='text-accent-color'>message</span>
+            Leave me a message
           </motion.h3>
           <motion.form
             onSubmit={submitHandler}
@@ -53,20 +53,20 @@ const Contact = ({ resume }) => {
             <input
               type='text'
               name='name'
-              className='p-3 bg-background-color border-secondary-color border-b outline-none active:border-b-accent-color focus:border-b-accent-color'
+              className='p-3 bg-light-color dark:bg-background-color text-dark-color dark:text-light-color border-secondary-color border-b outline-none active:border-b-accent-color focus:border-b-accent-color'
               placeholder='Name'
               required
             />
             <input
               type='text'
               name='email'
-              className='p-3 bg-background-color border-secondary-color border-b outline-none active:border-b-accent-color focus:border-b-accent-color'
+              className='p-3 bg-light-color dark:bg-background-color text-dark-color dark:text-light-color border-secondary-color border-b outline-none active:border-b-accent-color focus:border-b-accent-color'
               placeholder='Email'
               required
             />
             <textarea
               name='message'
-              className='p-3 bg-background-color border-secondary-color border-b outline-none active:border-b-accent-color focus:border-b-accent-color resize-none'
+              className='p-3 bg-light-color dark:bg-background-color text-dark-color dark:text-light-color border-secondary-color border-b outline-none active:border-b-accent-color focus:border-b-accent-color resize-none'
               placeholder='Your Messsage'
               rows='4'
               required
@@ -91,10 +91,10 @@ const Contact = ({ resume }) => {
           }}
           className='w-100 gap-2 flex flex-col text-center md:text-left text-gray-color items-center md:w-2/6 md:items-start md:pl-4'
         >
-          <h1 className='font-semibold text-3xl text-light-color'>
+          <h1 className='font-extrabold text-3xl text-dark-color dark:text-light-color font-gilroy'>
             Let&apos;s talk about it.
           </h1>
-          <div className='flex flex-col text-sm gap-2'>
+          <div className='flex flex-col text-sm gap-2 text-primary-color dark:text-gray-color'>
             <p>You can find out more about me on my Resume.</p>
             <a
               href={download}
@@ -107,7 +107,7 @@ const Contact = ({ resume }) => {
               Grab a copy
             </a>
           </div>
-          <div className='flex flex-col text-sm gap-1 items-center md:items-start'>
+          <div className='flex flex-col text-sm gap-1 items-center md:items-start text-primary-color dark:text-gray-color'>
             <span>Calamba, Laguna</span>
             <span>bustarde.aj@gmail.com</span>
           </div>
@@ -119,9 +119,9 @@ const Contact = ({ resume }) => {
             ].map((link, index) => (
               <SocialIcon
                 key={`${link}-${index}`}
-                className='fill-light-color md:hover:scale-110 transition ease-in-out duration-250'
+                className='dark:fill-light-color md:hover:scale-110 transition ease-in-out duration-250'
                 url={link}
-                fgColor='primary-color'
+                fgColor='dark-color'
                 bgColor='transparent'
                 style={{ width: 35, height: 35 }}
               />

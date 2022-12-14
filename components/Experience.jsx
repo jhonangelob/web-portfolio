@@ -1,5 +1,6 @@
-import { motion } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
 import Image from 'next/image';
+import { useRef } from 'react';
 import {
   contentful,
   css,
@@ -27,58 +28,47 @@ const technologies = [
 ];
 const others = [git, npm, figma, contentful];
 
-function Experience() {
+const experience = [
+  {
+    position: 'Web Developer Intern',
+    company: 'Symph,Inc',
+    date: 'March 2022 - July 2022',
+  },
+  {
+    position: 'Junior Software Engineer',
+    company: 'Everbank Vananaz Inc.',
+    date: 'January 2023 - Present',
+  },
+];
+
+const Experience = () => {
+  const container = useRef(null);
+  const isInView = useInView(container, { once: true });
   return (
-    <div className='flex flex-col justify-center max-w-4xl gap-10 m-auto p-6 min-h-screen'>
-      <h1 className='text-5xl font-bold leading-tight text-secondary-color md:text-7xl'>
-        My Development{' '}
-        <motion.span
-          whileInView={{
-            opacity: [0, 1],
-            color: ['#c4c4c4c4', '#ffffff'],
-          }}
-          transition={{
-            duration: 1,
-          }}
-        >
-          Technologies
-        </motion.span>{' '}
-        and{' '}
-        <motion.span
-          whileInView={{
-            opacity: [0, 0.5, 1],
-            color: ['#696969', '#c4c4c4'],
-          }}
-          transition={{
-            duration: 1,
-          }}
-        >
-          Experiences
-        </motion.span>
-        .
+    <div
+      ref={container}
+      className='flex flex-col justify-center max-w-4xl gap-10 p-6 mx-auto my-auto md:my-16 min-h-screen md:min-h-fit'
+    >
+      <h1
+        className='text-5xl font-bold text-dark-color dark:text-light-color md:text-6xl overflow-hidden'
+        style={{
+          transform: isInView ? 'none' : 'translateY(100px)',
+          opacity: isInView ? 1 : 0,
+          transition: 'all 0.5s',
+        }}
+      >
+        Technologies and Experiences
       </h1>
       <div className='flex flex-col w-full md:flex-row md:justify-between text-secondary-color'>
         <div className='md:w-4/6 flex flex-col gap-4 mb-4'>
-          <motion.h3
-            className='text-accent-color'
-            whileInView={{
-              opacity: [0, 1],
-              x: [-60, 0],
-              transition: {
-                duration: 0.5,
-              },
-            }}
-          >
-            Technologies
-          </motion.h3>
-          <p className='italic text-light-color'>
+          <p className='text-accent-color font-medium'>
             The technologies I use for front-end and back-end development.
           </p>
           <motion.div
             className='flex gap-6 flex-wrap my-4'
             whileInView={{
               opacity: [0, 1],
-              y: [20, 0],
+              y: [40, 0],
               transition: {
                 duration: 0.5,
               },
@@ -101,7 +91,7 @@ function Experience() {
               </div>
             ))}
           </motion.div>
-          <p className='italic text-light-color'>others...</p>
+          <p className='text-accent-color font-medium'>others...</p>
           <motion.div
             className='flex gap-6 flex-wrap my-4'
             whileInView={{
@@ -126,7 +116,7 @@ function Experience() {
         </div>
         <div className='md:w-2/6 flex flex-col overflow-hidden gap-4'>
           <motion.h3
-            className='text-accent-color'
+            className='text-accent-color font-medium'
             whileInView={{
               opacity: [0, 1],
               x: [60, 0],
@@ -138,34 +128,20 @@ function Experience() {
             Experience/s
           </motion.h3>
           <div className='flex flex-col gap-6'>
-            <div className='item-center'>
-              <h3 className='text-light-color font-medium'>
-                Web Developer Intern
-              </h3>
-              <p className='text-sm'>Symph, Inc.</p>
-              <p className='text-sm'>Mar 2022 - Jul 2022</p>
-            </div>
-            <motion.div
-              className='items-center border-l-4 border-accent-color pl-4'
-              whileInView={{
-                opacity: [0, 1],
-                y: [20, 0],
-                transition: {
-                  duration: 0.5,
-                },
-              }}
-            >
-              <h3 className='text-light-color font-medium'>
-                Junior Software Engineer
-              </h3>
-              <p className='text-sm'>Everbank Vananaz Inc.</p>
-              <p className='text-sm'>Jan 2023 - Present</p>
-            </motion.div>
+            {experience?.map((exp, index) => (
+              <div key={index} className='item-center'>
+                <h3 className='text-dark-color dark:text-light-color font-bold text-md font-gilroy'>
+                  {exp.position}
+                </h3>
+                <p className='text-sm'>{exp.company}</p>
+                <p className='text-sm'>{exp.date}</p>
+              </div>
+            ))}
           </div>
         </div>
       </div>
     </div>
   );
-}
+};
 
 export default Experience;
