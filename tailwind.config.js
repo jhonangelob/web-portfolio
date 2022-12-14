@@ -11,13 +11,15 @@ module.exports = {
       'dark-color': '#000',
       'light-color': '#fff',
       'gray-color': '#c4c4c4',
-      'background-color': '#191919',
+      'background-color': '#1A1A1A',
     },
     extend: {
       fontFamily: {
         sans: ['Poppins', 'sans-serif'],
+        gilroy: ['Gilroy', 'sans-serif'],
       },
     },
   },
   plugins: [require('tailwind-scrollbar')],
+  darkMode: 'class',
 };
