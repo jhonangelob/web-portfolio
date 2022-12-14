@@ -12,24 +12,24 @@
   @font-face {
     font-family: 'Gilroy';
     font-weight: 400;
-    src: url('../public/fonts/Gilroy-Regular.ttf');
+    src: url('../public/fonts/Gilroy-Regular.ttf') format('truetype');
   }
 
   @font-face {
     font-family: 'Gilroy';
     font-weight: 700;
-    src: url('../public/fonts/Gilroy-Bold.ttf');
+    src: url('../public/fonts/Gilroy-Bold.ttf') format('truetype');
   }
 
   @font-face {
     font-family: 'Gilroy';
     font-weight: 800;
-    src: url('../public/fonts/Gilroy-ExtraBold.ttf');
+    src: url('../public/fonts/Gilroy-ExtraBold.ttf') format('truetype');
   }
 
   @font-face {
     font-family: 'Gilroy';
     font-weight: 900;
-    src: url('../public/fonts/Gilroy-Black.ttf');
+    src: url('../public/fonts/Gilroy-Black.ttf') format('truetype');
   }
 }
