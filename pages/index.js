@@ -29,7 +29,7 @@ export const getStaticProps = async () => {
 
 export default function Home({ resume, projects }) {
   return (
-    <div className='min-h-screen'>
+    <div className={`min-h-screen dark`}>
       <Head>
         <title>jhn</title>
         <meta
@@ -38,14 +38,14 @@ export default function Home({ resume, projects }) {
         />
       </Head>
       <Header />
-      <section className='bg-background-color'>
+      <section className='bg-light-color dark:bg-background-color'>
         <Hero />
         <About />
         <Projects projects={projects} />
         <Experience />
         <Contact resume={resume} />
+        <Footer />
       </section>
-      <Footer />
     </div>
   );
 }
