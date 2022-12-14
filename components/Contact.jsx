@@ -20,10 +20,10 @@ const Contact = ({ resume }) => {
 
   return (
     <div
-      className='flex flex-col max-w-4xl justify-center p-6 mx-auto m-auto md:my-16 h-screen md:h-fit'
+      className='flex flex-col max-w-4xl justify-center p-6 mx-auto my-8 min-h-screen md:min-h-fit'
       id='contact'
     >
-      <h1 className='font-extrabold text-6xl mb-10 text-center text-dark-color dark:text-light-color md:text-8xl'>
+      <h1 className='font-bold text-6xl mb-10 text-center text-dark-color dark:text-light-color md:text-8xl'>
         Contact
       </h1>
       <motion.h3
@@ -91,7 +91,7 @@ const Contact = ({ resume }) => {
           }}
           className='w-100 gap-2 flex flex-col text-center md:text-left text-gray-color items-center md:w-2/6 md:items-start md:pl-4'
         >
-          <h1 className='font-extrabold text-3xl text-dark-color dark:text-light-color'>
+          <h1 className='font-bold text-3xl text-dark-color dark:text-light-color'>
             Let&apos;s talk about it.
           </h1>
           <div className='flex flex-col text-sm gap-2 text-primary-color dark:text-gray-color'>

@@ -47,7 +47,7 @@ const Experience = () => {
   return (
     <div
       ref={container}
-      className='flex flex-col justify-center max-w-4xl gap-10 p-6 mx-auto my-auto md:my-16 min-h-screen md:min-h-fit'
+      className='flex flex-col justify-center max-w-4xl gap-10 p-6 mx-auto my-8 min-h-screen md:min-h-fit'
     >
       <h1
         className='text-5xl font-bold text-dark-color dark:text-light-color md:text-6xl overflow-hidden'
@@ -60,9 +60,21 @@ const Experience = () => {
         Technologies and Experiences
       </h1>
       <div className='flex flex-col w-full md:flex-row md:justify-between text-secondary-color'>
-        <div className='md:w-4/6 flex flex-col gap-4 mb-4'>
-          <p className='text-accent-color font-medium'>
-            The technologies I use for front-end and back-end development.
+        <div className='md:w-4/6 flex flex-col gap-4 mb-8'>
+          <motion.h3
+            className='text-accent-color font-semibold'
+            whileInView={{
+              opacity: [0, 1],
+              x: [-60, 0],
+              transition: {
+                duration: 0.5,
+              },
+            }}
+          >
+            Technologies
+          </motion.h3>
+          <p className='text-light-color font-medium'>
+            For front-end and back-end development.
           </p>
           <motion.div
             className='flex gap-6 flex-wrap my-4'
@@ -91,7 +103,7 @@ const Experience = () => {
               </div>
             ))}
           </motion.div>
-          <p className='text-accent-color font-medium'>others...</p>
+          <p className='text-light-color font-medium'>others...</p>
           <motion.div
             className='flex gap-6 flex-wrap my-4'
             whileInView={{
@@ -116,7 +128,7 @@ const Experience = () => {
         </div>
         <div className='md:w-2/6 flex flex-col overflow-hidden gap-4'>
           <motion.h3
-            className='text-accent-color font-medium'
+            className='text-accent-color font-semibold'
             whileInView={{
               opacity: [0, 1],
               x: [60, 0],
@@ -129,12 +141,12 @@ const Experience = () => {
           </motion.h3>
           <div className='flex flex-col gap-6'>
             {experience?.map((exp, index) => (
-              <div key={index} className='item-center'>
-                <h3 className='text-dark-color dark:text-light-color font-bold text-md'>
+              <div key={index} className='flex flex-col item-center gap-1'>
+                <h3 className='text-dark-color dark:text-light-color font-semibold text-md'>
                   {exp.position}
                 </h3>
-                <p className='text-sm'>{exp.company}</p>
-                <p className='text-sm'>{exp.date}</p>
+                <p className='text-sm text-gray-color'>{exp.company}</p>
+                <p className='text-sm text-secondary-color'>{exp.date}</p>
               </div>
             ))}
           </div>

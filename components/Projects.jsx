@@ -2,8 +2,8 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 const Projects = ({ projects }) => {
   return (
-    <div className='flex flex-col justify-center items-center max-w-4xl px-6 mx-auto my-auto md:my-16 min-h-fit'>
-      <h1 className='font-extrabold self-start md:self-center text-6xl text-dark-color dark:text-light-color mb-10 md:text-8xl'>
+    <div className='flex flex-col justify-center items-center max-w-4xl p-6 mx-auto my-8 min-h-screen md:min-h-fit'>
+      <h1 className='font-bold text-6xl mb-10 text-center text-dark-color dark:text-light-color md:text-8xl'>
         Projects
       </h1>
       <div className='grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-2 w-full'>
@@ -17,7 +17,7 @@ const Projects = ({ projects }) => {
                 duration: 0.5,
               },
             }}
-            className='flex flex-col p-6 pl-0 border-b border-secondary-color group cursor-pointer h-full'
+            className='flex flex-col pt-4 pb-6 border-b border-secondary-color group cursor-pointer h-full'
           >
             <Link
               href={project.fields.projectLink}
@@ -29,7 +29,7 @@ const Projects = ({ projects }) => {
               <p className='text-primary-color dark:text-light-color text-sm'>
                 {project.fields.description}
               </p>
-              <div className='flex gap-2 flex-wrap'>
+              <div className='flex gap-2 flex-wrap items-center'>
                 {project.fields.technology.map((tech, index) => (
                   <span
                     key={index}
@@ -38,11 +38,9 @@ const Projects = ({ projects }) => {
                     {tech}
                   </span>
                 ))}
-              </div>
-              <div className='flex gap-6 text-sm mt-4 md:mt-auto'>
                 <Link
                   href={project.fields.codeLink}
-                  className='text-accent-color underline'
+                  className='text-accent-color uppercase text-xs font-medium underline'
                 >
                   Source code
                 </Link>

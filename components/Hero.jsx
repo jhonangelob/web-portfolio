@@ -30,7 +30,7 @@ const Hero = () => {
           Jhon Angelo
         </motion.h1>
         <motion.p
-          className='text-secondary-color'
+          className='text-secondary-color uppercase font-medium'
           whileInView={{
             opacity: [0, 1],
             transition: {
@@ -38,8 +38,9 @@ const Hero = () => {
             },
           }}
         >
-          A Junior Software Engineer with a Bachelor of Information Technology
-          degree from the Philippines&apos; first Polytechnic University.
+          A frontend focused Junior software engineer based in the philippines,
+          with a bachelor in information technology from the country&apos;s
+          first polytechnic university.
           <br />
           Currently focused on Web/Mobile Development using React Technologies.
         </motion.p>
@@ -53,10 +54,10 @@ const Hero = () => {
           }}
         >
           <Link
-            href='#contact'
+            href='#about'
             className='uppercase w-fit font-medium p-2 border-l-4 items-center border-accent-color active:outline-none focus:outline-none text-light-color'
           >
-            Scroll for More
+            Find Out More
           </Link>
         </motion.li>
       </div>
