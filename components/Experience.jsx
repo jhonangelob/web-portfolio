@@ -62,7 +62,7 @@ const Experience = ({ experiences }) => {
           >
             Technologies
           </motion.h3>
-          <p className='text-secondary-color dark:text-light-color font-medium'>
+          <p className='text-secondary-color dark:text-light-color'>
             For front-end and back-end development.
           </p>
           <motion.div
@@ -92,7 +92,7 @@ const Experience = ({ experiences }) => {
               </div>
             ))}
           </motion.div>
-          <p className='text-secondary-color dark:text-light-color font-medium'>
+          <p className='text-secondary-color dark:text-light-color'>
             others...
           </p>
           <motion.div
@@ -133,7 +133,7 @@ const Experience = ({ experiences }) => {
           <div className='flex flex-col gap-6'>
             {experiences?.map((exp, index) => (
               <div key={index} className='flex flex-col item-center gap-1'>
-                <h3 className='text-dark-color dark:text-light-color font-semibold text-md'>
+                <h3 className='text-dark-color dark:text-light-color font-semibold'>
                   {exp.fields.position}
                 </h3>
                 <p className='text-sm text-gray-color'>{exp.fields.company}</p>

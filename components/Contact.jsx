@@ -53,20 +53,20 @@ const Contact = ({ resume }) => {
             <input
               type='text'
               name='name'
-              className='p-3 bg-light-color dark:bg-background-color text-dark-color dark:text-light-color border-secondary-color border-b outline-none active:border-b-accent-color focus:border-b-accent-color'
+              className='p-3 text-sm bg-light-color dark:bg-background-color text-dark-color dark:text-light-color border-secondary-color border-b outline-none active:border-b-accent-color focus:border-b-accent-color'
               placeholder='Name'
               required
             />
             <input
               type='text'
               name='email'
-              className='p-3 bg-light-color dark:bg-background-color text-dark-color dark:text-light-color border-secondary-color border-b outline-none active:border-b-accent-color focus:border-b-accent-color'
+              className='p-3 text-sm bg-light-color dark:bg-background-color text-dark-color dark:text-light-color border-secondary-color border-b outline-none active:border-b-accent-color focus:border-b-accent-color'
               placeholder='Email'
               required
             />
             <textarea
               name='message'
-              className='p-3 bg-light-color dark:bg-background-color text-dark-color dark:text-light-color border-secondary-color border-b outline-none active:border-b-accent-color focus:border-b-accent-color resize-none'
+              className='p-3 text-sm bg-light-color dark:bg-background-color text-dark-color dark:text-light-color border-secondary-color border-b outline-none active:border-b-accent-color focus:border-b-accent-color resize-none'
               placeholder='Your Messsage'
               rows='4'
               required
@@ -91,7 +91,7 @@ const Contact = ({ resume }) => {
           }}
           className='w-100 gap-2 flex flex-col text-center md:text-left text-gray-color items-center md:w-2/6 md:items-start md:pl-4'
         >
-          <h1 className='font-bold text-3xl text-dark-color dark:text-light-color'>
+          <h1 className='font-bold text-2xl text-dark-color dark:text-light-color'>
             Let&apos;s talk about it.
           </h1>
           <div className='flex flex-col text-sm gap-2 text-primary-color dark:text-gray-color'>
