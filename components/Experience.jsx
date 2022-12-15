@@ -62,7 +62,7 @@ const Experience = ({ experiences }) => {
           >
             Technologies
           </motion.h3>
-          <p className='text-secondary-color dark:text-light-color'>
+          <p className='text-secondary-color dark:text-light-color text-sm md:text-base'>
             For front-end and back-end development.
           </p>
           <motion.div
@@ -92,7 +92,7 @@ const Experience = ({ experiences }) => {
               </div>
             ))}
           </motion.div>
-          <p className='text-secondary-color dark:text-light-color'>
+          <p className='text-secondary-color dark:text-light-color text-sm md:text-base'>
             others...
           </p>
           <motion.div

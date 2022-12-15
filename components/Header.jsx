@@ -10,7 +10,7 @@ const links = [
 const navLinks = ['hero', 'about', 'experience', 'contact'];
 const Header = () => {
   return (
-    <header className='transition-all duration-300 sticky top-0 min-w-screen z-20 px-6 py-4 cursor-pointer bg-light-color dark:bg-background-color'>
+    <header className='transition-all duration-300 sticky top-0 min-w-screen z-20 p-6 cursor-pointer bg-light-color dark:bg-background-color'>
       <div className='flex flex-row max-w-5xl mx-auto overflow-hidden items-center justify-between md:overflow-visible '>
         <motion.div
           className='flex flex-row items-center'
@@ -20,7 +20,7 @@ const Header = () => {
         >
           <Link
             href='/'
-            className='text-2xl font-bold text-dark-color dark:text-light-color'
+            className='text-xl md:text-2xl font-bold text-dark-color dark:text-light-color'
           >
             jhn
           </Link>
@@ -33,7 +33,7 @@ const Header = () => {
         >
           <Link
             href='#contact'
-            className='uppercase font-semibold text-sm border-secondary-color text-dark-color dark:text-light-color'
+            className='uppercase font-semibold text-xs md:text-sm border-secondary-color text-dark-color dark:text-light-color'
           >
             Contact
           </Link>

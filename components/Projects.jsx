@@ -25,7 +25,7 @@ const Projects = ({ projects }) => {
           >
             <Link
               href={project.fields.projectLink}
-              className='text-dark-color dark:text-light-color font-extrabold group-hover:text-accent-color text-lg mb-4 transition-all duration-300'
+              className='text-dark-color dark:text-light-color font-bold group-hover:text-accent-color text-lg mb-4 transition-all duration-300 w-fit'
             >
               {project.fields.name}
             </Link>
@@ -42,6 +42,7 @@ const Projects = ({ projects }) => {
                     {tech}
                   </span>
                 ))}
+                <span className='text-secondary-color text-xs'>|</span>
                 <Link
                   href={project.fields.codeLink}
                   className='text-accent-color uppercase text-xs font-medium underline'
