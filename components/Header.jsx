@@ -10,7 +10,7 @@ const links = [
 const navLinks = ['hero', 'about', 'experience', 'contact'];
 const Header = () => {
   return (
-    <header className='sticky top-0 min-w-screen z-20 p-6 md:px-6 md:py-4 cursor-pointer bg-light-color dark:bg-background-color'>
+    <header className='transition-all duration-300 sticky top-0 min-w-screen z-20 p-6 md:px-6 md:py-4 cursor-pointer bg-light-color dark:bg-background-color'>
       <div className='flex flex-row max-w-5xl mx-auto overflow-hidden items-center justify-between md:overflow-visible '>
         <motion.div
           className='flex flex-row items-center'

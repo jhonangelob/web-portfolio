@@ -47,7 +47,8 @@ const Experience = () => {
   return (
     <div
       ref={container}
-      className='flex flex-col justify-center max-w-4xl gap-10 p-6 mx-auto my-8 min-h-screen md:min-h-fit'
+      className='flex flex-col justify-center max-w-4xl gap-10 p-6 mx-auto my-8 min-h-screen md:pt-32 md:pb-16 md:min-h-fit'
+      id='experience'
     >
       <h1
         className='text-5xl font-bold text-dark-color dark:text-light-color md:text-6xl overflow-hidden'

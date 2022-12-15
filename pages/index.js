@@ -1,5 +1,6 @@
 import { createClient } from 'contentful';
 import Head from 'next/head';
+import { useState } from 'react';
 import About from '../components/About';
 import Contact from '../components/Contact';
 import Experience from '../components/Experience';
@@ -28,8 +29,9 @@ export const getStaticProps = async () => {
 };
 
 export default function Home({ resume, projects }) {
+  const [isLight, setIsLight] = useState(false);
   return (
-    <div className={`min-h-screen dark`}>
+    <div className={`min-h-screen ${isLight ? 'light' : 'dark'}`}>
       <Head>
         <title>jhn</title>
         <meta
@@ -38,9 +40,9 @@ export default function Home({ resume, projects }) {
         />
       </Head>
       <Header />
-      <section className='bg-light-color dark:bg-background-color'>
+      <section className='transition-all duration-300 bg-light-color dark:bg-background-color'>
         <Hero />
-        <About />
+        <About setIsLight={setIsLight} />
         <Projects projects={projects} />
         <Experience />
         <Contact resume={resume} />
