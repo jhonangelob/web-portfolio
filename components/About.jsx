@@ -43,11 +43,17 @@ const About = ({ setIsLight }) => {
         onMouseLeave={() => setIsLight(false)}
       >
         <h1 className='text-4xl font-semibold text-dark-color dark:text-light-color'>
-          &quot;I like minimalist design that makes utilizes white space.&quot;
+          &quot;I like minimalist design that utilizes whitespace.&quot;
         </h1>
+        <p className='md:dark:hidden text-lg hidden dark:block text-right font-medium text-light-color'>
+          Tap inside
+        </p>
+        <p className='md:hidden text-lg dark:hidden text-right font-medium text-dark-color '>
+          Now tap outside
+        </p>
         <Link
           href='#projects'
-          className='items-center self-end w-fit text-lg font-medium text-dark-color dark:text-light-color cursor-pointer'
+          className='hidden md:block items-center self-end w-fit text-lg font-medium text-dark-color dark:text-light-color cursor-pointer'
         >
           <motion.button
             className='flex flex-row items-center gap-2'
