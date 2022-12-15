@@ -10,7 +10,7 @@ const About = ({ setIsLight }) => {
     >
       <div className=''>
         <h1 className='text-6xl font-bold text-primary-color dark:text-secondary-color md:leading-tight md:text-7xl'>
-          &quot;I specialize in{' '}
+          I specialize in{' '}
           <motion.span
             className='text-secondary-color'
             whileInView={{
@@ -34,11 +34,11 @@ const About = ({ setIsLight }) => {
           >
             UI/UX
           </motion.span>{' '}
-          Design.&quot;
+          Design.
         </h1>
       </div>
       <div
-        className='transition-all duration-500 flex flex-col border-2 self-end border-secondary-color p-10 gap-y-20 md:w-4/6'
+        className='transition-all duration-500 flex flex-col border-2 self-end dark:border-secondary-color border-dark-color p-10 gap-y-20 md:w-4/6'
         onMouseEnter={() => setIsLight(true)}
         onMouseLeave={() => setIsLight(false)}
       >
