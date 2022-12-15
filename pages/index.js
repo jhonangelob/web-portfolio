@@ -14,21 +14,31 @@ export const getStaticProps = async () => {
     space: process.env.CONTENTFUL_SPACE_ID,
     accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
   });
+
   const resume = await client.getEntries({
     content_type: 'resume',
   });
+
   const projects = await client.getEntries({
     content_type: 'projects',
+    order: 'sys.createdAt',
   });
+
+  const experiences = await client.getEntries({
+    content_type: 'experiences',
+    order: 'sys.createdAt',
+  });
+
   return {
     props: {
       resume: resume.items,
       projects: projects.items,
+      experiences: experiences.items,
     },
   };
 };
 
-export default function Home({ resume, projects }) {
+export default function Home({ resume, projects, experiences }) {
   const [isLight, setIsLight] = useState(false);
   return (
     <div className={`min-h-screen ${isLight ? 'light' : 'dark'}`}>
@@ -44,7 +54,7 @@ export default function Home({ resume, projects }) {
         <Hero />
         <About setIsLight={setIsLight} />
         <Projects projects={projects} />
-        <Experience />
+        <Experience experiences={experiences} />
         <Contact resume={resume} />
         <Footer />
       </section>

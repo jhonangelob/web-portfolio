@@ -5,15 +5,9 @@ import { FaChevronRight } from 'react-icons/fa';
 const About = ({ setIsLight }) => {
   return (
     <div
-      className='flex relative flex-col gap-20 justify-center items-center max-w-4xl p-6 mx-auto min-h-screen md:pt-32 md:pb-16 md:min-h-fit'
+      className='flex flex-col gap-20 justify-center items-center max-w-4xl p-6 mx-auto min-h-screen md:pt-32 md:pb-16 md:min-h-fit'
       id='about'
     >
-      <div className='md:hidden absolute top-0 -left-2 flex items-center gap-1'>
-        <div className='w-4 bg-accent-color h-px' />
-        <p className='text-accent-color uppercase font-semibold text-xs'>
-          about
-        </p>
-      </div>
       <h1 className='text-6xl font-bold text-primary-color dark:text-secondary-color md:leading-tight md:text-7xl'>
         I specialize in{' '}
         <motion.span

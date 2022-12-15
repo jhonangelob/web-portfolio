@@ -28,34 +28,15 @@ const technologies = [
 ];
 const others = [git, npm, figma, contentful];
 
-const experience = [
-  {
-    position: 'Web Developer Intern',
-    company: 'Symph,Inc',
-    date: 'March 2022 - July 2022',
-  },
-  {
-    position: 'Junior Software Engineer',
-    company: 'Everbank Vananaz Inc.',
-    date: 'January 2023 - Present',
-  },
-];
-
-const Experience = () => {
+const Experience = ({ experiences }) => {
   const container = useRef(null);
   const isInView = useInView(container, { once: true });
   return (
     <div
       ref={container}
-      className='flex flex-col relative justify-center max-w-4xl gap-10 p-6 mx-auto my-8 min-h-screen md:pt-32 md:pb-16 md:min-h-fit'
+      className='flex flex-col justify-center max-w-4xl gap-10 p-6 mx-auto my-8 min-h-screen md:pt-32 md:pb-16 md:min-h-fit'
       id='experience'
     >
-      <div className='md:hidden absolute top-0 -left-2 flex items-center gap-1'>
-        <div className='w-4 bg-accent-color h-px' />
-        <p className='text-accent-color uppercase font-semibold text-xs'>
-          Development
-        </p>
-      </div>
       <h1
         className='text-5xl font-bold text-dark-color dark:text-light-color md:text-6xl overflow-hidden'
         style={{
@@ -148,13 +129,15 @@ const Experience = () => {
             Experience/s
           </motion.h3>
           <div className='flex flex-col gap-6'>
-            {experience?.map((exp, index) => (
+            {experiences?.map((exp, index) => (
               <div key={index} className='flex flex-col item-center gap-1'>
                 <h3 className='text-dark-color dark:text-light-color font-semibold text-md'>
-                  {exp.position}
+                  {exp.fields.position}
                 </h3>
-                <p className='text-sm text-gray-color'>{exp.company}</p>
-                <p className='text-sm text-secondary-color'>{exp.date}</p>
+                <p className='text-sm text-gray-color'>{exp.fields.company}</p>
+                <p className='text-sm text-secondary-color'>
+                  {exp.fields.date}
+                </p>
               </div>
             ))}
           </div>

@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+
 const Projects = ({ projects }) => {
   return (
     <div
