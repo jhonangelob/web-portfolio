@@ -8,7 +8,7 @@ const About = ({ setIsLight }) => {
       className='flex flex-col gap-20 justify-center items-center max-w-4xl p-6 mx-auto min-h-screen md:pt-32 md:pb-16 md:min-h-fit'
       id='about'
     >
-      <h1 className='text-6xl font-bold text-primary-color dark:text-secondary-color md:leading-tight md:text-7xl'>
+      <h1 className='text-5xl font-bold text-primary-color dark:text-secondary-color md:leading-tight md:text-7xl'>
         I specialize in{' '}
         <motion.span
           className='text-secondary-color'
@@ -41,7 +41,7 @@ const About = ({ setIsLight }) => {
         onMouseEnter={() => setIsLight(true)}
         onMouseLeave={() => setIsLight(false)}
       >
-        <h1 className='text-4xl font-semibold text-dark-color dark:text-light-color'>
+        <h1 className='text-4xl font-semibold text-dark-color dark:text-light-color md:w-5/6'>
           &quot;I like minimalist design that utilizes whitespace.&quot;
         </h1>
         <p className='md:dark:hidden text-lg hidden dark:block text-right font-medium text-light-color'>

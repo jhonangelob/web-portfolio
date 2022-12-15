@@ -62,7 +62,7 @@ const Experience = ({ experiences }) => {
           >
             Technologies
           </motion.h3>
-          <p className='text-light-color font-medium'>
+          <p className='text-secondary-color dark:text-light-color font-medium'>
             For front-end and back-end development.
           </p>
           <motion.div
@@ -92,7 +92,9 @@ const Experience = ({ experiences }) => {
               </div>
             ))}
           </motion.div>
-          <p className='text-light-color font-medium'>others...</p>
+          <p className='text-secondary-color dark:text-light-color font-medium'>
+            others...
+          </p>
           <motion.div
             className='flex gap-6 flex-wrap my-4'
             whileInView={{
