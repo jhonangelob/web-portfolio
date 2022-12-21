@@ -28,16 +28,15 @@ const Projects = ({ projects }) => {
               className='text-dark-color dark:text-light-color font-bold group-hover:text-accent-color text-lg mb-4 transition-all duration-300 w-fit'
             >
               {project.fields.name}
+              {': '}
+              {project.fields.description}
             </Link>
             <div className='flex flex-col gap-1 md:gap-2 h-full'>
-              <p className='text-primary-color dark:text-light-color text-sm'>
-                {project.fields.description}
-              </p>
               <div className='flex gap-2 flex-wrap items-center'>
                 {project.fields.technology.map((tech, index) => (
                   <span
                     key={index}
-                    className='uppercase text-secondary-color text-xs font-medium'
+                    className='uppercase text-secondary-color text-xs'
                   >
                     {tech}
                   </span>
@@ -45,7 +44,7 @@ const Projects = ({ projects }) => {
                 <span className='text-secondary-color text-xs'>|</span>
                 <Link
                   href={project.fields.codeLink}
-                  className='text-accent-color uppercase text-xs font-medium underline'
+                  className='text-accent-color uppercase text-xs underline'
                 >
                   Source code
                 </Link>

@@ -1,6 +1,6 @@
-import { motion, useInView } from 'framer-motion';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { useRef } from 'react';
+
 import {
   contentful,
   css,
@@ -29,41 +29,35 @@ const technologies = [
 const others = [git, npm, figma, contentful];
 
 const Experience = ({ experiences }) => {
-  const container = useRef(null);
-  const isInView = useInView(container, { once: true });
   return (
     <div
-      ref={container}
-      className='flex flex-col justify-center max-w-4xl gap-10 p-6 mx-auto my-8 min-h-screen md:pt-32 md:pb-16 md:min-h-fit'
+      className='flex flex-col justify-center max-w-4xl gap-6 p-6 mx-auto my-8 min-h-screen md:pt-32 md:pb-16 md:min-h-fit'
       id='experience'
     >
-      <h1
-        className='text-5xl font-bold text-dark-color dark:text-light-color md:text-6xl overflow-hidden'
-        style={{
-          transform: isInView ? 'none' : 'translateY(100px)',
-          opacity: isInView ? 1 : 0,
-          transition: 'all 0.5s',
-        }}
-      >
-        Technologies and Experiences
-      </h1>
-
-      <div className='flex flex-col w-full md:flex-row md:justify-between text-secondary-color'>
-        <div className='md:w-4/6 flex flex-col gap-4 mb-8'>
-          <motion.h3
-            className='text-accent-color font-semibold'
-            whileInView={{
-              opacity: [0, 1],
-              x: [-60, 0],
-              transition: {
-                duration: 0.5,
-              },
-            }}
-          >
-            Technologies
-          </motion.h3>
-          <p className='text-secondary-color dark:text-light-color text-sm md:text-base'>
-            For front-end and back-end development.
+      <div className='flex flex-col gap-4'>
+        <h1 className='text-5xl font-bold text-dark-color dark:text-light-color md:text-6xl overflow-hidden'>
+          Technology and Experiences
+        </h1>
+        <motion.p
+          className='text-dark-color dark:text-light-color text-sm md:text-base md:w-5/6'
+          whileInView={{
+            opacity: [0, 1],
+            x: [-20, 0],
+            transition: {
+              duration: 0.5,
+            },
+          }}
+        >
+          I have used these technologies to build and maintain a variety of web
+          application. I am constatly trying to enhance my knowledge and stay
+          up-to-date with the latest web development trends and technologies.
+        </motion.p>
+      </div>
+      <div className='flex flex-col md:flex-row gap-y-4'>
+        <div className='md:w-4/6 flex flex-col gap-2'>
+          <p className='font-medium text-accent-color'>Technologies</p>
+          <p className='text-dark-color dark:text-light-color text-sm md:text-base'>
+            For front-end and back-end development
           </p>
           <motion.div
             className='flex gap-6 flex-wrap my-4'
@@ -92,7 +86,7 @@ const Experience = ({ experiences }) => {
               </div>
             ))}
           </motion.div>
-          <p className='text-secondary-color dark:text-light-color text-sm md:text-base'>
+          <p className='text-dark-color dark:text-light-color text-sm md:text-base'>
             others...
           </p>
           <motion.div
@@ -117,32 +111,29 @@ const Experience = ({ experiences }) => {
             ))}
           </motion.div>
         </div>
-        <div className='md:w-2/6 flex flex-col overflow-hidden gap-4'>
-          <motion.h3
-            className='text-accent-color font-semibold'
-            whileInView={{
-              opacity: [0, 1],
-              x: [60, 0],
-              transition: {
-                duration: 0.5,
-              },
-            }}
-          >
-            Experience/s
-          </motion.h3>
-          <div className='flex flex-col gap-6'>
-            {experiences?.map((exp, index) => (
-              <div key={index} className='flex flex-col item-center gap-1'>
-                <h3 className='text-dark-color dark:text-light-color font-semibold'>
-                  {exp.fields.position}
-                </h3>
-                <p className='text-sm text-gray-color'>{exp.fields.company}</p>
-                <p className='text-sm text-secondary-color'>
-                  {exp.fields.date}
-                </p>
-              </div>
-            ))}
-          </div>
+        <div className='md:w-2/6 flex flex-col gap-2'>
+          <p className='font-medium text-accent-color'>Experience/s</p>
+          {experiences?.map((exp, index) => (
+            <motion.div
+              key={index}
+              className='flex flex-col item-center gap-1 mb-2'
+              whileInView={{
+                opacity: [0, 1],
+                y: [-20, 0],
+                transition: {
+                  duration: 0.5,
+                },
+              }}
+            >
+              <p className='text-dark-color dark:text-light-color font-semibold'>
+                {exp.fields.position}
+              </p>
+              <p className='text-sm dark:text-gray-color text-secondary-color'>
+                {exp.fields.company}
+              </p>
+              <p className='text-sm text-secondary-color'>{exp.fields.date}</p>
+            </motion.div>
+          ))}
         </div>
       </div>
     </div>
