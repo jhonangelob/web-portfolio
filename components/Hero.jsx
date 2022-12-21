@@ -7,7 +7,7 @@ const Hero = () => {
       <div className='flex flex-col w-6/6 md:w-3/6 gap-y-10'>
         <div className='relative flex flex-col md:mt-10 md:w-5/6 self-end gap-6'>
           <motion.p
-            className='md:text-right text-primary-color dark:text-gray-color uppercase font-medium'
+            className='md:text-right text-primary-color dark:text-gray-color uppercase z-10 font-medium'
             whileInView={{
               opacity: [0, 1],
               y: [20, 0],
@@ -30,7 +30,7 @@ const Hero = () => {
             Technologies.
           </motion.p>
           <motion.div
-            className='absolute h-14 w-14 border-accent-color rounded-full border-2 -top-10 left-0'
+            className='absolute h-14 w-14 border-accent-color rounded-full border-2 -top-10 left-0 -z-0 border-opacity-80'
             whileInView={{
               opacity: [0, 1],
               x: [-40, 0],
