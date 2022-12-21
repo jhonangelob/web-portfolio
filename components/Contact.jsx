@@ -74,7 +74,7 @@ const Contact = ({ resume }) => {
             <button
               className={`${
                 isSending ? 'opacity-60' : 'opacity-100'
-              } md:hover:bg-opacity-60 p-3 w-100 font-semibold text-light-color bg-accent-color md:w-3/6 md:self-end transition-all duration-200`}
+              } md:hover:bg-opacity-60 p-3 w-100 font-semibold text-light-color bg-accent-color md:w-3/6 md:self-end transition duration-200`}
               disabled={isSending}
             >
               {isSending ? 'SENDING...' : 'SEND'}
@@ -98,7 +98,7 @@ const Contact = ({ resume }) => {
             <p>You can find out more about me on my Resume.</p>
             <a
               href={download}
-              className='md:flex flex-row rounded-sm text-accent-color text-lg font-semibold items-center text-center gap-2 md:text-left md:hover:text-opacity-80 transition-all'
+              className='md:flex flex-row rounded-sm text-accent-color text-lg font-semibold items-center text-center gap-2 md:text-left md:hover:text-opacity-80 transition'
               rel='noopener noreferrer'
               target='_blank'
               download

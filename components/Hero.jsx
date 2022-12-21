@@ -61,22 +61,6 @@ const Hero = () => {
           </Link>
         </motion.li>
       </div>
-      {/* <div className='w-3/6'></div> */}
-      {/* <motion.h1
-        className='text-primary-color font-bold text-5xl max-w-4xl mb-40 md:text-6xl dark:text-white-color'
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 1 }}
-      >
-        Hello, it&apos;s me <br />
-        jhn
-        <br />
-        I&apos;m a{' '}
-        <span className='text-accent-color'>
-          Web/Mobile Application Developer
-        </span>
-        .
-      </motion.h1> */}
     </div>
   );
 };

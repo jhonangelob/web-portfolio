@@ -79,7 +79,7 @@ const Experience = ({ experiences }) => {
               >
                 <Image
                   key={index}
-                  className='md:hover:scale-110 transition ease-in-out duration-200 cursor-pointer w-full h-auto'
+                  className='md:hover:scale-110 transition-transform ease-in-out duration-200 cursor-pointer w-full h-auto'
                   src={item}
                   alt={item}
                 />

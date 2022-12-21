@@ -37,7 +37,7 @@ const About = ({ setIsLight }) => {
       </h1>
 
       <div
-        className='transition-all duration-500 flex flex-col border-2 self-end dark:border-secondary-color border-dark-color px-6 py-10 md:p-10 gap-y-20 md:w-4/6'
+        className='transition duration-500 flex flex-col border-2 self-end dark:border-secondary-color border-dark-color px-6 py-10 md:p-10 gap-y-20 md:w-4/6'
         onMouseEnter={() => setIsLight(true)}
         onMouseLeave={() => setIsLight(false)}
       >
