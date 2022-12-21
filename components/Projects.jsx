@@ -25,7 +25,7 @@ const Projects = ({ projects }) => {
           >
             <Link
               href={project.fields.projectLink}
-              className='text-dark-color dark:text-light-color font-bold group-hover:text-accent-color text-lg mb-4 transition duration-300 w-fit'
+              className='text-primary-color dark:text-light-color font-bold group-hover:text-accent-color text-lg mb-4 transition duration-300 w-fit'
             >
               {project.fields.name}
               {': '}

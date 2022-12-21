@@ -35,11 +35,11 @@ const Experience = ({ experiences }) => {
       id='experience'
     >
       <div className='flex flex-col gap-4'>
-        <h1 className='text-5xl font-bold text-dark-color dark:text-light-color md:text-6xl overflow-hidden'>
+        <h1 className='text-5xl font-bold text-dark-color dark:text-light-color md:text-6xl'>
           Technology and Experiences
         </h1>
         <motion.p
-          className='text-dark-color dark:text-light-color text-sm md:text-base md:w-5/6'
+          className='text-primary-color dark:text-light-color text-sm md:text-base md:w-5/6'
           whileInView={{
             opacity: [0, 1],
             x: [-20, 0],
@@ -56,7 +56,7 @@ const Experience = ({ experiences }) => {
       <div className='flex flex-col md:flex-row gap-y-4'>
         <div className='md:w-4/6 flex flex-col gap-2'>
           <p className='font-medium text-accent-color'>Technologies</p>
-          <p className='text-dark-color dark:text-light-color text-sm md:text-base'>
+          <p className='text-primary-color dark:text-light-color text-sm md:text-base'>
             For front-end and back-end development
           </p>
           <motion.div
@@ -86,7 +86,7 @@ const Experience = ({ experiences }) => {
               </div>
             ))}
           </motion.div>
-          <p className='text-dark-color dark:text-light-color text-sm md:text-base'>
+          <p className='text-primary-color dark:text-light-color text-sm md:text-base'>
             others...
           </p>
           <motion.div
@@ -125,7 +125,7 @@ const Experience = ({ experiences }) => {
                 },
               }}
             >
-              <p className='text-dark-color dark:text-light-color font-semibold'>
+              <p className='text-primary-color dark:text-light-color font-semibold'>
                 {exp.fields.position}
               </p>
               <p className='text-sm dark:text-gray-color text-secondary-color'>
