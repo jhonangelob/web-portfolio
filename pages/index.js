@@ -50,7 +50,7 @@ export default function Home({ resume, projects, experiences }) {
         />
       </Head>
       <Header />
-      <section className='transition duration-300 bg-light-color dark:bg-background-color'>
+      <section className='transition duration-300 bg-light-color dark:bg-background-color overflow-hidden'>
         <Hero />
         <About setIsLight={setIsLight} />
         <Projects projects={projects} />
