@@ -49,7 +49,7 @@ const Experience = ({ experiences }) => {
           }}
         >
           I have used these technologies to build and maintain a variety of web
-          application. I am constatly trying to enhance my knowledge and stay
+          application. I am constantly trying to enhance my knowledge and stay
           up-to-date with the latest web development trends and technologies.
         </motion.p>
       </div>
