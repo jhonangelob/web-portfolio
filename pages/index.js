@@ -24,21 +24,15 @@ export const getStaticProps = async () => {
     order: 'sys.createdAt',
   });
 
-  const experiences = await client.getEntries({
-    content_type: 'experiences',
-    order: 'sys.createdAt',
-  });
-
   return {
     props: {
       resume: resume.items,
       projects: projects.items,
-      experiences: experiences.items,
     },
   };
 };
 
-export default function Home({ resume, projects, experiences }) {
+export default function Home({ resume, projects }) {
   const [isLight, setIsLight] = useState(false);
   return (
     <div className={`min-h-screen ${isLight ? 'light' : 'dark'}`}>
@@ -54,7 +48,7 @@ export default function Home({ resume, projects, experiences }) {
         <Hero />
         <About setIsLight={setIsLight} />
         <Projects projects={projects} />
-        <Experience experiences={experiences} />
+        <Experience />
         <Contact resume={resume} />
         <Footer />
       </section>

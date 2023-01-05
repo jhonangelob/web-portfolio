@@ -29,22 +29,6 @@ const Hero = () => {
             Currently focused on Web/Mobile Development using React
             Technologies.
           </motion.p>
-          <motion.div
-            className='absolute h-14 w-14 border-accent-color rounded-full border-2 -top-10 left-0 -z-0 border-opacity-80'
-            whileInView={{
-              opacity: [0, 1],
-              x: [-40, 0],
-              transition: { duration: 0.5 },
-            }}
-          />
-          <motion.div
-            className='absolute h-24 w-24 border-accent-color rounded-md border -bottom-5 -right-20 -z-0'
-            whileInView={{
-              opacity: [0, 1],
-              x: [40, 0],
-              transition: { duration: 0.5 },
-            }}
-          />
         </div>
         <motion.div
           className='flex justify-center md:justify-end'

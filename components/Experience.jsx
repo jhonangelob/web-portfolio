@@ -28,7 +28,20 @@ const technologies = [
 ];
 const others = [git, npm, figma, contentful];
 
-const Experience = ({ experiences }) => {
+const experiences = [
+  {
+    position: 'Web Developer Intern',
+    company: 'Symph, Inc.',
+    date: 'March 2022 - July 2022',
+  },
+  {
+    position: 'Junior Software Engineer',
+    company: 'Everbank Vananaz, Inc.',
+    date: 'January 2023 - Present',
+  },
+];
+
+const Experience = () => {
   return (
     <div
       className='flex flex-col justify-center max-w-4xl gap-6 p-6 mx-auto my-8 min-h-screen md:pt-32 md:pb-16 md:min-h-fit'
@@ -126,12 +139,12 @@ const Experience = ({ experiences }) => {
               }}
             >
               <p className='text-primary-color dark:text-light-color font-semibold'>
-                {exp.fields.position}
+                {exp.position}
               </p>
               <p className='text-sm dark:text-gray-color text-secondary-color'>
-                {exp.fields.company}
+                {exp.company}
               </p>
-              <p className='text-sm text-secondary-color'>{exp.fields.date}</p>
+              <p className='text-sm text-secondary-color'>{exp.date}</p>
             </motion.div>
           ))}
         </div>
